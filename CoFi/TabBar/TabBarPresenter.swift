@@ -1,0 +1,19 @@
+//
+//  TabBarPresenter.swift
+//  CoFi
+//
+//  Created by Santo Michael Sihombing on 12/12/21.
+//  Copyright (c) 2021 ___ORGANIZATIONNAME___. All rights reserved.
+//
+
+class TabBarPresenter: TabBarViewToPresenterProtocol {
+    var view: TabBarPresenterToViewProtocol?
+    var router: TabBarPresenterToRouterProtocol?
+    var interactor: TabBarPresenterToInteractorProtocol?
+    
+    
+}
+
+extension TabBarPresenter: TabBarInteractorToPresenterProtocol {
+
+}

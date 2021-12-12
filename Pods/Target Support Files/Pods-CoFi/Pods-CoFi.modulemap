@@ -1,0 +1,6 @@
+module Pods_CoFi {
+  umbrella header "Pods-CoFi-umbrella.h"
+
+  export *
+  module * { export * }
+}

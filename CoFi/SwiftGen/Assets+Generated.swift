@@ -27,10 +27,17 @@ internal enum Asset {
     internal static let _00D8Ff = ColorAsset(name: "00D8FF")
     internal static let _1F1F1F = ColorAsset(name: "1F1F1F")
     internal static let a9A9A9 = ColorAsset(name: "A9A9A9")
+    internal static let c5Ffdf = ColorAsset(name: "C5FFDF")
     internal static let e3F2Ff = ColorAsset(name: "E3F2FF")
+    internal static let ede9F4 = ColorAsset(name: "EDE9F4")
     internal static let ffa200 = ColorAsset(name: "FFA200")
+    internal static let ffd8Df = ColorAsset(name: "FFD8DF")
     internal static let ffdf00 = ColorAsset(name: "FFDF00")
     internal static let ffeed1 = ColorAsset(name: "FFEED1")
+    internal static let fffed1 = ColorAsset(name: "FFFED1")
+  }
+  internal enum Icons {
+    internal static let spotify = ImageAsset(name: "spotify")
   }
   internal enum Image {
     internal static let _1 = ImageAsset(name: "1")

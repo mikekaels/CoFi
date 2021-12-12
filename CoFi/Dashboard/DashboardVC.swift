@@ -14,6 +14,13 @@ class DashboardVC: UIViewController {
     var friendOweToYou: [String] = ["Michael", "Sarah", "Ken", "Jennifer Laurance"]
     var youOweToYourFriend: [String] = ["Sarah", "Jennifer Laurance", "Ken"]
     
+    var upcomingData: [Upcoming] = [
+        Upcoming(itemName: "Grocery", price: 97000, date: Date(), reminderTime: "1 week", icon: "cart.fill", iconColor: "ffa200", bgColor: "ffeed1"),
+        Upcoming(itemName: "Spotify", price: 97000, date: Date(), reminderTime: "1 week", icon: "spotify", iconColor: "ffa200", bgColor: "c5Ffdf"),
+        Upcoming(itemName: "Water", price: 97000, date: Date(), reminderTime: "1 week", icon: "drop.fill", iconColor: "_0078Ff", bgColor: "e3F2Ff"),
+        Upcoming(itemName: "Grocery", price: 97000, date: Date(), reminderTime: "1 week", icon: "cart.fill", iconColor: "ffa200", bgColor: "ffeed1"),
+    ]
+    
     let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.translatesAutoresizingMaskIntoConstraints = false
@@ -336,21 +343,61 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
         }
     }
     
+    func chooseColor(color: String) -> UIColor {
+        switch color {
+        case "_00D8Ff":
+            return Asset.Color._00D8Ff.color
+        case "_0078Ff":
+            return Asset.Color._0078Ff.color
+        case "a9A9A9":
+            return Asset.Color.a9A9A9.color
+        case "ffa200":
+            return Asset.Color.ffa200.color
+        case "ffeed1":
+            return Asset.Color.ffeed1.color
+        case "_1F1F1F":
+            return Asset.Color._1F1F1F.color
+        case "e3F2Ff":
+            return Asset.Color.e3F2Ff.color
+        case "ffdf00":
+            return Asset.Color.ffdf00.color
+        case "c5Ffdf":
+            return Asset.Color.c5Ffdf.color
+        default:
+            return Asset.Color.ffdf00.color
+        }
+    }
     
 }
 
 extension DashboardVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if upcomingData.count > 3 {
+            return 3
+        } else {
+            return upcomingData.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = upcomingTableView.dequeueReusableCell(withIdentifier: "upcomingCell", for: indexPath) as! UpcomingCell
+        let data = upcomingData[indexPath.row]
+        cell.lItem.text = data.itemName
+        cell.icon.image = UIImage(systemName: data.icon)
+        if cell.icon.image == nil {
+            cell.icon.image = UIImage(named: data.icon)
+        }
+        cell.icon.tintColor = chooseColor(color: data.iconColor)
+        cell.bg.backgroundColor = chooseColor(color: data.bgColor)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 58
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
 
@@ -481,8 +528,3 @@ extension DashboardVC {
     }
 }
 
-class MyGradientView: UIView {
-    override class var layerClass: Swift.AnyClass {
-        return CAGradientLayer.self
-    }
-}

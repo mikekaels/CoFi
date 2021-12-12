@@ -10,22 +10,14 @@
 //  see http://clean-swift.com
 //
 
-import UIKit
+import Foundation
 
-enum Dashboard
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
+struct Upcoming {
+    let itemName: String
+    let price: Int
+    let date: Date
+    let reminderTime: String
+    let icon: String
+    let iconColor: String
+    let bgColor: String
 }

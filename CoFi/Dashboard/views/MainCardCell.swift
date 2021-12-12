@@ -31,7 +31,7 @@ class MainCardCell: UICollectionViewCell {
     
     let lUser: UILabel = UILabel()
         .configure { v in
-            v.text = "Michael"
+            v.text = "Unknown"
             v.font = UIFont.systemFont(ofSize: 12, weight: .regular)
             v.textAlignment = .left
             v.textColor = .white

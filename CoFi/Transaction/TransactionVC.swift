@@ -17,17 +17,28 @@ class TransactionVC: UIViewController {
     
     let transactionTableView: UITableView = UITableView()
         .configure { v in
+            v.backgroundColor = .clear
+            v.separatorStyle = .none
             v.register(TransactionCell.self, forCellReuseIdentifier: "transactionCell")
             v.translatesAutoresizingMaskIntoConstraints = false
         }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Transactions"
+        view.backgroundColor = .white
+        title = "Transaction"
         transactionTableView.dataSource = self
         transactionTableView.delegate = self
         
         setupViews()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
     }
     
     func setupViews() {
@@ -45,23 +56,31 @@ extension TransactionVC: TransactionPresenterToViewProtocol {
 }
 
 extension TransactionVC: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "14 Oct 2021"
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 100
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = transactionTableView.dequeueReusableCell(withIdentifier: "transactionCell", for: indexPath) as! TransactionCell
+        
+        return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
-class TransactionCell: UITableViewCell {
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-}

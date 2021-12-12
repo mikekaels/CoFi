@@ -13,7 +13,8 @@ class GroupVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = ""
+        title = "Group"
+        view.backgroundColor = .white
         // Do any additional setup after loading the view.
     }
 

@@ -44,6 +44,10 @@
 		BD9BF4C8276651840020CE8D /* MainCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4C7276651840020CE8D /* MainCardCell.swift */; };
 		BD9BF4CA276653D90020CE8D /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4C9276653D90020CE8D /* Extension + UIView.swift */; };
 		BD9BF4CC27667D540020CE8D /* UpcomingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4CB27667D540020CE8D /* UpcomingCell.swift */; };
+		BD9BF4CE2766AB9C0020CE8D /* Extension + Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4CD2766AB9C0020CE8D /* Extension + Date.swift */; };
+		BD9BF4D02766ABB90020CE8D /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4CF2766ABB90020CE8D /* Extension + String.swift */; };
+		BD9BF4D22766AC030020CE8D /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D12766AC030020CE8D /* UserDefault.swift */; };
+		BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D42766AF430020CE8D /* TransactionCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +90,10 @@
 		BD9BF4C7276651840020CE8D /* MainCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCardCell.swift; sourceTree = "<group>"; };
 		BD9BF4C9276653D90020CE8D /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 		BD9BF4CB27667D540020CE8D /* UpcomingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingCell.swift; sourceTree = "<group>"; };
+		BD9BF4CD2766AB9C0020CE8D /* Extension + Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Date.swift"; sourceTree = "<group>"; };
+		BD9BF4CF2766ABB90020CE8D /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
+		BD9BF4D12766AC030020CE8D /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
+		BD9BF4D42766AF430020CE8D /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		C49D66E500760FC89C4876C9 /* Pods-CoFi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.debug.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.debug.xcconfig"; sourceTree = "<group>"; };
 		D25AE8296CFB22F3A961C7E4 /* Pods-CoFi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.release.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -186,6 +194,7 @@
 		BD9BF49A2766082F0020CE8D /* Transaction */ = {
 			isa = PBXGroup;
 			children = (
+				BD9BF4D32766AF240020CE8D /* views */,
 				BD9BF49B276608420020CE8D /* TransactionPresenter.swift */,
 				BD9BF49C276608420020CE8D /* TransactionRouter.swift */,
 				BD9BF49D276608420020CE8D /* TransactionModels.swift */,
@@ -213,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9BF4B927660A070020CE8D /* Constants.swift */,
+				BD9BF4D12766AC030020CE8D /* UserDefault.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -223,6 +233,8 @@
 				BD9BF4BC27660BC70020CE8D /* Configures.swift */,
 				BD9BF4BE27660C6C0020CE8D /* Extension + UIViewController.swift */,
 				BD9BF4C9276653D90020CE8D /* Extension + UIView.swift */,
+				BD9BF4CD2766AB9C0020CE8D /* Extension + Date.swift */,
+				BD9BF4CF2766ABB90020CE8D /* Extension + String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -241,6 +253,14 @@
 			children = (
 				BD9BF4C7276651840020CE8D /* MainCardCell.swift */,
 				BD9BF4CB27667D540020CE8D /* UpcomingCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BD9BF4D32766AF240020CE8D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BF4D42766AF430020CE8D /* TransactionCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -360,6 +380,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD9BF4D22766AC030020CE8D /* UserDefault.swift in Sources */,
+				BD9BF4CE2766AB9C0020CE8D /* Extension + Date.swift in Sources */,
 				BD9BF48A276607E50020CE8D /* GroupProtocol.swift in Sources */,
 				BD9BF4A5276608420020CE8D /* TransactionProtocol.swift in Sources */,
 				BD9BF489276607E50020CE8D /* GroupInteractor.swift in Sources */,
@@ -373,12 +395,14 @@
 				BD9BF4AF2766088C0020CE8D /* TabBarRouter.swift in Sources */,
 				BD9BF4CA276653D90020CE8D /* Extension + UIView.swift in Sources */,
 				BD9BF4AE2766088C0020CE8D /* TabBarPresenter.swift in Sources */,
+				BD9BF4D02766ABB90020CE8D /* Extension + String.swift in Sources */,
 				BD9BF4C8276651840020CE8D /* MainCardCell.swift in Sources */,
 				BD9BF4A4276608420020CE8D /* TransactionInteractor.swift in Sources */,
 				BD9BF4B02766088C0020CE8D /* TabBarModels.swift in Sources */,
 				BD9BF4A3276608420020CE8D /* TransactionModels.swift in Sources */,
 				BD9BF494276608270020CE8D /* DashboardPresenter.swift in Sources */,
 				BD9BF4BD27660BC70020CE8D /* Configures.swift in Sources */,
+				BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */,
 				BD9BF488276607E50020CE8D /* GroupModels.swift in Sources */,
 				BD9BF4A2276608420020CE8D /* TransactionRouter.swift in Sources */,
 				BD9BF4CC27667D540020CE8D /* UpcomingCell.swift in Sources */,

@@ -12,20 +12,16 @@
 
 import UIKit
 
-enum Transaction
-{
-  // MARK: Use cases
-  
-  enum Something
-  {
-    struct Request
-    {
-    }
-    struct Response
-    {
-    }
-    struct ViewModel
-    {
-    }
-  }
+struct Transaction {
+    let name: String
+    let date: Date
+    let totalPrice: Int
+    let items: [Item]
+}
+
+struct Item {
+    let name: String
+    let amount: Int
+    let price: Int
+    let person: String
 }

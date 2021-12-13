@@ -30,7 +30,7 @@ class GroupVC: UIViewController {
             v.setTitleColor(Asset.Color._0078Ff.color, for: .normal)
             v.setImage(UIImage(systemName: "plus"), for: .normal)
             v.translatesAutoresizingMaskIntoConstraints = false
-            v.addTarget(self, action: #selector(joinButtonTapped), for: .touchUpInside)
+            v.addTarget(self, action: #selector(createButtonTapped), for: .touchUpInside)
         }
     
     let groupTableView: UITableView = UITableView()
@@ -55,6 +55,10 @@ class GroupVC: UIViewController {
         print("Hello World")
     }
     
+    @objc func createButtonTapped() {
+        presentor?.goToCreateGroup(from: self)
+    }
+    
 }
 
 extension GroupVC: GroupPresenterToViewProtocol {
@@ -68,7 +72,6 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = groupTableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
-        cell.bg.backgroundColor = .white
         cell.id = String(indexPath.row)
         return cell
     }

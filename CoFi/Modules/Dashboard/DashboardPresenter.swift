@@ -11,7 +11,21 @@ class DashboardPresenter: DashboardViewToPresenterProtocol {
     var router: DashboardPresenterToRouterProtocol?
     var interactor: DashboardPresenterToInteractorProtocol?
     
+    func goToCreateBill(from: DashboardVC) {
+        router?.goToCreateBill(from: from)
+    }
     
+    func goToCreateExpense(from: DashboardVC) {
+        router?.goToCreateExpense(from: from)
+    }
+    
+    func goToCreateDebt(from: DashboardVC) {
+        router?.goToCreateDebt(from: from)
+    }
+    
+    func goToUserDebtDetails(from: DashboardVC) {
+        router?.goToUserDebtDetails(from: from)
+    }
 }
 
 extension DashboardPresenter: DashboardInteractorToPresenterProtocol {

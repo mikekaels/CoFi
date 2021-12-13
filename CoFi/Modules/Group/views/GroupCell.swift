@@ -76,6 +76,7 @@ class GroupCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollecti
         bg.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -26).isActive = true
         bg.heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: -10).isActive = true
         bg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        bg.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         bg.addSubview(lGroup)
         lGroup.topAnchor.constraint(equalTo: bg.topAnchor, constant: 20).isActive = true

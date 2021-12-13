@@ -17,11 +17,13 @@ protocol GroupViewToPresenterProtocol: AnyObject {
     var router: GroupPresenterToRouterProtocol? { get set }
     
     func goToDetail(from: GroupVC, index: String)
+    func goToCreateGroup(from: GroupVC)
 }
 
 protocol GroupPresenterToRouterProtocol: AnyObject {
     func createModule() -> GroupVC
     func goToDetail(from: GroupVC, index: String)
+    func goToCreateGroup(from: GroupVC)
 }
 
 protocol GroupPresenterToViewProtocol: AnyObject {

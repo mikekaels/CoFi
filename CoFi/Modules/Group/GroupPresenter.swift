@@ -14,6 +14,10 @@ class GroupPresenter: GroupViewToPresenterProtocol {
     func goToDetail(from: GroupVC, index: String) {
         router?.goToDetail(from: from, index: index)
     }
+    
+    func goToCreateGroup(from: GroupVC) {
+        router?.goToCreateGroup(from: from)
+    }
 }
 
 extension GroupPresenter: GroupInteractorToPresenterProtocol {

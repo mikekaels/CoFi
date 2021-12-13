@@ -13,10 +13,19 @@ protocol DashboardViewToPresenterProtocol: AnyObject {
     var view: DashboardPresenterToViewProtocol? { get set }
     var interactor: DashboardPresenterToInteractorProtocol? { get set }
     var router: DashboardPresenterToRouterProtocol? { get set }
+    
+    func goToCreateExpense(from: DashboardVC)
+    func goToCreateBill(from: DashboardVC)
+    func goToCreateDebt(from: DashboardVC)
+    func goToUserDebtDetails(from: DashboardVC)
 }
 
 protocol DashboardPresenterToRouterProtocol: AnyObject {
     func createModule() -> DashboardVC
+    func goToCreateExpense(from: DashboardVC)
+    func goToCreateBill(from: DashboardVC)
+    func goToCreateDebt(from: DashboardVC)
+    func goToUserDebtDetails(from: DashboardVC)
 }
 
 protocol DashboardPresenterToViewProtocol: AnyObject {

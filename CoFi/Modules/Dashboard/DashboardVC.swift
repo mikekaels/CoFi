@@ -262,15 +262,15 @@ class DashboardVC: UIViewController {
     }
     
     @objc func expansesTapped() {
-        print("Hello World")
+        presentor?.goToCreateExpense(from: self)
     }
     
     @objc func billTapped() {
-        print("Hello World")
+        presentor?.goToCreateBill(from: self)
     }
     
     @objc func debtTapped() {
-        print("Hello World")
+        presentor?.goToCreateDebt(from: self)
     }
     
     @objc func UpcomingSeeAllButtonTapped() {
@@ -340,6 +340,12 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
             return cell
         default:
             return UICollectionViewCell()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == friendOweToYouCollection {
+            presentor?.goToUserDebtDetails(from: self)
         }
     }
     

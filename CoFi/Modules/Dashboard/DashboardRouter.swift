@@ -33,4 +33,24 @@ public class DashboardRouter: DashboardPresenterToRouterProtocol{
         
         return view
     }
+    
+    func goToCreateExpense(from: DashboardVC) {
+        let vc = CreateExpenseRouter().createModule()
+        from.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func goToCreateBill(from: DashboardVC) {
+        let vc = CreateBillRouter().createModule()
+        from.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func goToCreateDebt(from: DashboardVC) {
+        let vc = CreateDebtRouter().createModule()
+        from.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func goToUserDebtDetails(from: DashboardVC) {
+        let vc = UserDebtDetailsRouter().createModule()
+        from.navigationController?.pushViewController(vc, animated: true)
+    }
 }

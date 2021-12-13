@@ -38,7 +38,13 @@ public class GroupRouter: GroupPresenterToRouterProtocol{
         let vc = GroupDetailsRouter().createModule()
         vc.id = index
         vc.modalPresentationStyle = .fullScreen
-//        from.navigationController?.pushViewController(vc, animated: true)
         from.present(vc, animated: true, completion: nil)
+    }
+    
+    func goToCreateGroup(from: GroupVC) {
+        let vc = CreateGroupRouter().createModule()
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        from.present(nav, animated: true, completion: nil)
     }
 }

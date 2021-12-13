@@ -48,6 +48,8 @@
 		BD9BF4D02766ABB90020CE8D /* Extension + String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4CF2766ABB90020CE8D /* Extension + String.swift */; };
 		BD9BF4D22766AC030020CE8D /* UserDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D12766AC030020CE8D /* UserDefault.swift */; };
 		BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D42766AF430020CE8D /* TransactionCell.swift */; };
+		BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D727674A2E0020CE8D /* MemberCell.swift */; };
+		BD9BF4DA27674A4E0020CE8D /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D927674A4E0020CE8D /* GroupCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +96,8 @@
 		BD9BF4CF2766ABB90020CE8D /* Extension + String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + String.swift"; sourceTree = "<group>"; };
 		BD9BF4D12766AC030020CE8D /* UserDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefault.swift; sourceTree = "<group>"; };
 		BD9BF4D42766AF430020CE8D /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
+		BD9BF4D727674A2E0020CE8D /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
+		BD9BF4D927674A4E0020CE8D /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
 		C49D66E500760FC89C4876C9 /* Pods-CoFi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.debug.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.debug.xcconfig"; sourceTree = "<group>"; };
 		D25AE8296CFB22F3A961C7E4 /* Pods-CoFi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.release.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,6 +171,7 @@
 		BD9BF47F276607CE0020CE8D /* Group */ = {
 			isa = PBXGroup;
 			children = (
+				BD9BF4D627674A1F0020CE8D /* views */,
 				BD9BF480276607E50020CE8D /* GroupPresenter.swift */,
 				BD9BF481276607E50020CE8D /* GroupRouter.swift */,
 				BD9BF482276607E50020CE8D /* GroupModels.swift */,
@@ -261,6 +266,15 @@
 			isa = PBXGroup;
 			children = (
 				BD9BF4D42766AF430020CE8D /* TransactionCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BD9BF4D627674A1F0020CE8D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BF4D727674A2E0020CE8D /* MemberCell.swift */,
+				BD9BF4D927674A4E0020CE8D /* GroupCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -395,6 +409,7 @@
 				BD9BF4AF2766088C0020CE8D /* TabBarRouter.swift in Sources */,
 				BD9BF4CA276653D90020CE8D /* Extension + UIView.swift in Sources */,
 				BD9BF4AE2766088C0020CE8D /* TabBarPresenter.swift in Sources */,
+				BD9BF4DA27674A4E0020CE8D /* GroupCell.swift in Sources */,
 				BD9BF4D02766ABB90020CE8D /* Extension + String.swift in Sources */,
 				BD9BF4C8276651840020CE8D /* MainCardCell.swift in Sources */,
 				BD9BF4A4276608420020CE8D /* TransactionInteractor.swift in Sources */,
@@ -414,6 +429,7 @@
 				BD9BF4B22766088C0020CE8D /* TabBarProtocol.swift in Sources */,
 				BD9BF48B276607E50020CE8D /* GroupVC.swift in Sources */,
 				BD9BF4A1276608420020CE8D /* TransactionPresenter.swift in Sources */,
+				BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */,
 				BD9BF4BF27660C6C0020CE8D /* Extension + UIViewController.swift in Sources */,
 				BD9BF46E276607090020CE8D /* SceneDelegate.swift in Sources */,
 				BD9BF497276608270020CE8D /* DashboardInteractor.swift in Sources */,

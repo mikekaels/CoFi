@@ -68,6 +68,8 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = groupTableView.dequeueReusableCell(withIdentifier: "groupCell", for: indexPath) as! GroupCell
+        cell.bg.backgroundColor = .white
+        cell.id = String(indexPath.row)
         return cell
     }
     
@@ -77,6 +79,7 @@ extension GroupVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         groupTableView.deselectRow(at: indexPath, animated: true)
+        presentor?.goToDetail(from: self, index: String(indexPath.row))
     }
 }
 

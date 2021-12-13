@@ -50,6 +50,12 @@
 		BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D42766AF430020CE8D /* TransactionCell.swift */; };
 		BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D727674A2E0020CE8D /* MemberCell.swift */; };
 		BD9BF4DA27674A4E0020CE8D /* GroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4D927674A4E0020CE8D /* GroupCell.swift */; };
+		BD9BF4E227675A640020CE8D /* GroupDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4DC27675A640020CE8D /* GroupDetailsPresenter.swift */; };
+		BD9BF4E327675A640020CE8D /* GroupDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4DD27675A640020CE8D /* GroupDetailsRouter.swift */; };
+		BD9BF4E427675A640020CE8D /* GroupDetailsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4DE27675A640020CE8D /* GroupDetailsModels.swift */; };
+		BD9BF4E527675A640020CE8D /* GroupDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4DF27675A640020CE8D /* GroupDetailsInteractor.swift */; };
+		BD9BF4E627675A640020CE8D /* GroupDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4E027675A640020CE8D /* GroupDetailsProtocol.swift */; };
+		BD9BF4E727675A640020CE8D /* GroupDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF4E127675A640020CE8D /* GroupDetailsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +104,12 @@
 		BD9BF4D42766AF430020CE8D /* TransactionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionCell.swift; sourceTree = "<group>"; };
 		BD9BF4D727674A2E0020CE8D /* MemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCell.swift; sourceTree = "<group>"; };
 		BD9BF4D927674A4E0020CE8D /* GroupCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCell.swift; sourceTree = "<group>"; };
+		BD9BF4DC27675A640020CE8D /* GroupDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsPresenter.swift; sourceTree = "<group>"; };
+		BD9BF4DD27675A640020CE8D /* GroupDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsRouter.swift; sourceTree = "<group>"; };
+		BD9BF4DE27675A640020CE8D /* GroupDetailsModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsModels.swift; sourceTree = "<group>"; };
+		BD9BF4DF27675A640020CE8D /* GroupDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsInteractor.swift; sourceTree = "<group>"; };
+		BD9BF4E027675A640020CE8D /* GroupDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsProtocol.swift; sourceTree = "<group>"; };
+		BD9BF4E127675A640020CE8D /* GroupDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsVC.swift; sourceTree = "<group>"; };
 		C49D66E500760FC89C4876C9 /* Pods-CoFi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.debug.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.debug.xcconfig"; sourceTree = "<group>"; };
 		D25AE8296CFB22F3A961C7E4 /* Pods-CoFi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.release.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -152,6 +164,7 @@
 		BD9BF46A276607090020CE8D /* CoFi */ = {
 			isa = PBXGroup;
 			children = (
+				BD9BF4DB27675A470020CE8D /* GroupDetails */,
 				BD9BF4C12766337A0020CE8D /* SwiftGen */,
 				BD9BF4BB27660BB90020CE8D /* Extensions */,
 				BD9BF4B4276609AD0020CE8D /* Shared */,
@@ -277,6 +290,19 @@
 				BD9BF4D927674A4E0020CE8D /* GroupCell.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		BD9BF4DB27675A470020CE8D /* GroupDetails */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BF4DC27675A640020CE8D /* GroupDetailsPresenter.swift */,
+				BD9BF4DD27675A640020CE8D /* GroupDetailsRouter.swift */,
+				BD9BF4DE27675A640020CE8D /* GroupDetailsModels.swift */,
+				BD9BF4DF27675A640020CE8D /* GroupDetailsInteractor.swift */,
+				BD9BF4E027675A640020CE8D /* GroupDetailsProtocol.swift */,
+				BD9BF4E127675A640020CE8D /* GroupDetailsVC.swift */,
+			);
+			path = GroupDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,16 +433,20 @@
 				BD9BF4B32766088C0020CE8D /* TabBarVC.swift in Sources */,
 				BD9BF4B12766088C0020CE8D /* TabBarInteractor.swift in Sources */,
 				BD9BF4AF2766088C0020CE8D /* TabBarRouter.swift in Sources */,
+				BD9BF4E527675A640020CE8D /* GroupDetailsInteractor.swift in Sources */,
 				BD9BF4CA276653D90020CE8D /* Extension + UIView.swift in Sources */,
 				BD9BF4AE2766088C0020CE8D /* TabBarPresenter.swift in Sources */,
 				BD9BF4DA27674A4E0020CE8D /* GroupCell.swift in Sources */,
 				BD9BF4D02766ABB90020CE8D /* Extension + String.swift in Sources */,
 				BD9BF4C8276651840020CE8D /* MainCardCell.swift in Sources */,
 				BD9BF4A4276608420020CE8D /* TransactionInteractor.swift in Sources */,
+				BD9BF4E227675A640020CE8D /* GroupDetailsPresenter.swift in Sources */,
 				BD9BF4B02766088C0020CE8D /* TabBarModels.swift in Sources */,
 				BD9BF4A3276608420020CE8D /* TransactionModels.swift in Sources */,
 				BD9BF494276608270020CE8D /* DashboardPresenter.swift in Sources */,
+				BD9BF4E427675A640020CE8D /* GroupDetailsModels.swift in Sources */,
 				BD9BF4BD27660BC70020CE8D /* Configures.swift in Sources */,
+				BD9BF4E627675A640020CE8D /* GroupDetailsProtocol.swift in Sources */,
 				BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */,
 				BD9BF488276607E50020CE8D /* GroupModels.swift in Sources */,
 				BD9BF4A2276608420020CE8D /* TransactionRouter.swift in Sources */,
@@ -425,9 +455,11 @@
 				BD9BF4C4276635E80020CE8D /* Strings+Generated.swift in Sources */,
 				BD9BF499276608270020CE8D /* DashboardVC.swift in Sources */,
 				BD9BF495276608270020CE8D /* DashboardRouter.swift in Sources */,
+				BD9BF4E727675A640020CE8D /* GroupDetailsVC.swift in Sources */,
 				BD9BF4C5276635E80020CE8D /* Assets+Generated.swift in Sources */,
 				BD9BF4B22766088C0020CE8D /* TabBarProtocol.swift in Sources */,
 				BD9BF48B276607E50020CE8D /* GroupVC.swift in Sources */,
+				BD9BF4E327675A640020CE8D /* GroupDetailsRouter.swift in Sources */,
 				BD9BF4A1276608420020CE8D /* TransactionPresenter.swift in Sources */,
 				BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */,
 				BD9BF4BF27660C6C0020CE8D /* Extension + UIViewController.swift in Sources */,

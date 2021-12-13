@@ -8,8 +8,9 @@
 import UIKit
 
 class GroupCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
+    var id: String?
     
-    let bg: GradientView = GradientView(gradientStartColor:Asset.Color._00D8Ff.color,
+    var bg: GradientView = GradientView(gradientStartColor:Asset.Color._00D8Ff.color,
                                               gradientEndColor: Asset.Color._0078Ff.color,
                                               startPoint: CGPoint(x: 1.0, y: 1.0),
                                               endPoint: CGPoint(x: 0.1, y: 0.0))
@@ -71,7 +72,8 @@ class GroupCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollecti
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         contentView.addSubview(bg)
-        bg.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 3/3.5).isActive = true
+        bg.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 26).isActive = true
+        bg.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -26).isActive = true
         bg.heightAnchor.constraint(equalTo: contentView.heightAnchor, constant: -10).isActive = true
         bg.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         

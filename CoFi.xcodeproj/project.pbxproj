@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D1FEA5A977DC502A0DB04DC /* libPods-CoFi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E44D2D2B34ED6181B80EFC /* libPods-CoFi.a */; };
+		BD351CEE27683D5600A42054 /* SelectReminderTimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CE827683D5600A42054 /* SelectReminderTimePresenter.swift */; };
+		BD351CEF27683D5600A42054 /* SelectReminderTimeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CE927683D5600A42054 /* SelectReminderTimeRouter.swift */; };
+		BD351CF027683D5600A42054 /* SelectReminderTimeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEA27683D5600A42054 /* SelectReminderTimeModels.swift */; };
+		BD351CF127683D5600A42054 /* SelectReminderTimeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */; };
+		BD351CF227683D5600A42054 /* SelectReminderTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */; };
+		BD351CF327683D5600A42054 /* SelectReminderTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */; };
 		BD9BF46C276607090020CE8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF46B276607090020CE8D /* AppDelegate.swift */; };
 		BD9BF46E276607090020CE8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF46D276607090020CE8D /* SceneDelegate.swift */; };
 		BD9BF4752766070B0020CE8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9BF4742766070B0020CE8D /* Assets.xcassets */; };
@@ -99,6 +105,12 @@
 
 /* Begin PBXFileReference section */
 		36E44D2D2B34ED6181B80EFC /* libPods-CoFi.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CoFi.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD351CE827683D5600A42054 /* SelectReminderTimePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimePresenter.swift; sourceTree = "<group>"; };
+		BD351CE927683D5600A42054 /* SelectReminderTimeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeRouter.swift; sourceTree = "<group>"; };
+		BD351CEA27683D5600A42054 /* SelectReminderTimeModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeModels.swift; sourceTree = "<group>"; };
+		BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeInteractor.swift; sourceTree = "<group>"; };
+		BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeProtocol.swift; sourceTree = "<group>"; };
+		BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeVC.swift; sourceTree = "<group>"; };
 		BD9BF468276607090020CE8D /* CoFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9BF46B276607090020CE8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9BF46D276607090020CE8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +231,27 @@
 				36E44D2D2B34ED6181B80EFC /* libPods-CoFi.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD351CD927683D0F00A42054 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BD351CE727683D3E00A42054 /* SelectReminderTime */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BD351CE727683D3E00A42054 /* SelectReminderTime */ = {
+			isa = PBXGroup;
+			children = (
+				BD351CE827683D5600A42054 /* SelectReminderTimePresenter.swift */,
+				BD351CE927683D5600A42054 /* SelectReminderTimeRouter.swift */,
+				BD351CEA27683D5600A42054 /* SelectReminderTimeModels.swift */,
+				BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */,
+				BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */,
+				BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */,
+			);
+			path = SelectReminderTime;
 			sourceTree = "<group>";
 		};
 		BD9BF45F276607090020CE8D = {
@@ -445,6 +478,7 @@
 		BD9BF5102767D4EB0020CE8D /* CreateExpense */ = {
 			isa = PBXGroup;
 			children = (
+				BD351CD927683D0F00A42054 /* views */,
 				BD9BF5112767D53A0020CE8D /* CreateExpensePresenter.swift */,
 				BD9BF5122767D53A0020CE8D /* CreateExpenseRouter.swift */,
 				BD9BF5132767D53A0020CE8D /* CreateExpenseModels.swift */,
@@ -619,9 +653,11 @@
 				BD9BF489276607E50020CE8D /* GroupInteractor.swift in Sources */,
 				BD9BF486276607E50020CE8D /* GroupPresenter.swift in Sources */,
 				BD9BF496276608270020CE8D /* DashboardModels.swift in Sources */,
+				BD351CF027683D5600A42054 /* SelectReminderTimeModels.swift in Sources */,
 				BD9BF50D2767C3380020CE8D /* InsertGroupDetailInteractor.swift in Sources */,
 				BD9BF46C276607090020CE8D /* AppDelegate.swift in Sources */,
 				BD9BF498276608270020CE8D /* DashboardProtocol.swift in Sources */,
+				BD351CF227683D5600A42054 /* SelectReminderTimeProtocol.swift in Sources */,
 				BD9BF487276607E50020CE8D /* GroupRouter.swift in Sources */,
 				BD9BF4B32766088C0020CE8D /* TabBarVC.swift in Sources */,
 				BD9BF4B12766088C0020CE8D /* TabBarInteractor.swift in Sources */,
@@ -644,6 +680,7 @@
 				BD9BF4E227675A640020CE8D /* GroupDetailsPresenter.swift in Sources */,
 				BD9BF5432767D70B0020CE8D /* UserDebtDetailsVC.swift in Sources */,
 				BD9BF4B02766088C0020CE8D /* TabBarModels.swift in Sources */,
+				BD351CEF27683D5600A42054 /* SelectReminderTimeRouter.swift in Sources */,
 				BD9BF4A3276608420020CE8D /* TransactionModels.swift in Sources */,
 				BD9BF4FD2767B6DF0020CE8D /* MemberGroupCell.swift in Sources */,
 				BD9BF5412767D70B0020CE8D /* UserDebtDetailsInteractor.swift in Sources */,
@@ -653,6 +690,7 @@
 				BD9BF4E427675A640020CE8D /* GroupDetailsModels.swift in Sources */,
 				BD9BF4BD27660BC70020CE8D /* Configures.swift in Sources */,
 				BD9BF5422767D70B0020CE8D /* UserDebtDetailsProtocol.swift in Sources */,
+				BD351CF127683D5600A42054 /* SelectReminderTimeInteractor.swift in Sources */,
 				BD9BF4E627675A640020CE8D /* GroupDetailsProtocol.swift in Sources */,
 				BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */,
 				BD9BF488276607E50020CE8D /* GroupModels.swift in Sources */,
@@ -661,6 +699,7 @@
 				BD9BF4A2276608420020CE8D /* TransactionRouter.swift in Sources */,
 				BD9BF5362767D6C80020CE8D /* CreateDebtVC.swift in Sources */,
 				BD9BF5402767D70B0020CE8D /* UserDebtDetailsModels.swift in Sources */,
+				BD351CF327683D5600A42054 /* SelectReminderTimeVC.swift in Sources */,
 				BD9BF4F427678B9C0020CE8D /* CreateGroupModels.swift in Sources */,
 				BD9BF5282767D5A70020CE8D /* CreateBillProtocol.swift in Sources */,
 				BD9BF4CC27667D540020CE8D /* UpcomingCell.swift in Sources */,
@@ -684,6 +723,7 @@
 				BD9BF48B276607E50020CE8D /* GroupVC.swift in Sources */,
 				BD9BF50A2767C3380020CE8D /* InsertGroupDetailPresenter.swift in Sources */,
 				BD9BF4E327675A640020CE8D /* GroupDetailsRouter.swift in Sources */,
+				BD351CEE27683D5600A42054 /* SelectReminderTimePresenter.swift in Sources */,
 				BD9BF4A1276608420020CE8D /* TransactionPresenter.swift in Sources */,
 				BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */,
 				BD9BF4BF27660C6C0020CE8D /* Extension + UIViewController.swift in Sources */,

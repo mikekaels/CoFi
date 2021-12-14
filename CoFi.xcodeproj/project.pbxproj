@@ -14,6 +14,7 @@
 		BD351CF127683D5600A42054 /* SelectReminderTimeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */; };
 		BD351CF227683D5600A42054 /* SelectReminderTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */; };
 		BD351CF327683D5600A42054 /* SelectReminderTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */; };
+		BD8AFE202768AE6E00131FE5 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8AFE1F2768AE6E00131FE5 /* ItemCell.swift */; };
 		BD9BF46C276607090020CE8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF46B276607090020CE8D /* AppDelegate.swift */; };
 		BD9BF46E276607090020CE8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF46D276607090020CE8D /* SceneDelegate.swift */; };
 		BD9BF4752766070B0020CE8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD9BF4742766070B0020CE8D /* Assets.xcassets */; };
@@ -111,6 +112,7 @@
 		BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeInteractor.swift; sourceTree = "<group>"; };
 		BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeProtocol.swift; sourceTree = "<group>"; };
 		BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeVC.swift; sourceTree = "<group>"; };
+		BD8AFE1F2768AE6E00131FE5 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		BD9BF468276607090020CE8D /* CoFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9BF46B276607090020CE8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BD9BF46D276607090020CE8D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -236,7 +238,7 @@
 		BD351CD927683D0F00A42054 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				BD351CE727683D3E00A42054 /* SelectReminderTime */,
+				BD8AFE1F2768AE6E00131FE5 /* ItemCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -492,6 +494,7 @@
 		BD9BF51D2767D58F0020CE8D /* CreateBill */ = {
 			isa = PBXGroup;
 			children = (
+				BD351CE727683D3E00A42054 /* SelectReminderTime */,
 				BD9BF51E2767D5A70020CE8D /* CreateBillPresenter.swift */,
 				BD9BF51F2767D5A70020CE8D /* CreateBillRouter.swift */,
 				BD9BF5202767D5A70020CE8D /* CreateBillModels.swift */,
@@ -727,6 +730,7 @@
 				BD9BF4A1276608420020CE8D /* TransactionPresenter.swift in Sources */,
 				BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */,
 				BD9BF4BF27660C6C0020CE8D /* Extension + UIViewController.swift in Sources */,
+				BD8AFE202768AE6E00131FE5 /* ItemCell.swift in Sources */,
 				BD9BF5252767D5A70020CE8D /* CreateBillRouter.swift in Sources */,
 				BD9BF46E276607090020CE8D /* SceneDelegate.swift in Sources */,
 				BD9BF497276608270020CE8D /* DashboardInteractor.swift in Sources */,

@@ -11,7 +11,9 @@ class CreateBillPresenter: CreateBillViewToPresenterProtocol {
     var router: CreateBillPresenterToRouterProtocol?
     var interactor: CreateBillPresenterToInteractorProtocol?
     
-    
+    func goToSelectReminderTime(from: CreateBillVC) {
+        router?.goToSelectReminderTime(from: from)
+    }
 }
 
 extension CreateBillPresenter: CreateBillInteractorToPresenterProtocol {

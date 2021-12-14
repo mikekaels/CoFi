@@ -13,6 +13,8 @@ protocol CreateExpenseViewToPresenterProtocol: AnyObject {
     var view: CreateExpensePresenterToViewProtocol? { get set }
     var interactor: CreateExpensePresenterToInteractorProtocol? { get set }
     var router: CreateExpensePresenterToRouterProtocol? { get set }
+    
+    
 }
 
 protocol CreateExpensePresenterToRouterProtocol: AnyObject {

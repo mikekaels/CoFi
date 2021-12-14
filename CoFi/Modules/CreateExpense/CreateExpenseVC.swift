@@ -10,7 +10,10 @@ import UIKit
 class CreateExpenseVC: UIViewController {
     var presentor: CreateExpenseViewToPresenterProtocol?
     public var delegate: CreateExpenseDelegate!
+    var tableHeight: Double = 0.0
     
+    var items: [String] = ["","","",""]
+//    - CGFloat(4 * self.items.count) * 2
     let scrollView: UIScrollView = {
         let s = UIScrollView()
         s.translatesAutoresizingMaskIntoConstraints = false
@@ -33,7 +36,6 @@ class CreateExpenseVC: UIViewController {
             v.textAlignment = .left
             v.translatesAutoresizingMaskIntoConstraints = false
         }
-
     
     let memberSelectCollection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -107,84 +109,53 @@ class CreateExpenseVC: UIViewController {
             v.translatesAutoresizingMaskIntoConstraints = false
         }
     
-    let lReminderTime: UILabel = UILabel()
+    let itemTableView: UITableView = UITableView()
         .configure { v in
-            v.text = "REMINDER TIME"
-            v.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-            v.textColor = Asset.Color.c5C5C5.color
-            v.textAlignment = .left
+//            v.contentInset.top = 0
+//            v.contentInset.bottom = 0
+            v.separatorStyle = .none
+            v.register(ItemCell.self, forCellReuseIdentifier: "itemCell")
             v.translatesAutoresizingMaskIntoConstraints = false
+            v.isScrollEnabled = false
         }
     
-    let tfReminderTime: UITextField = UITextField()
+    let bAddItem: UIButton = UIButton()
         .configure { v in
-            v.placeholder = "Reminder Time ..."
-            v.backgroundColor = .systemGray6
-            v.layer.cornerRadius = 12
-            v.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            v.setTitle("Add Item", for: .normal)
+            v.titleLabel?.font = UIFont.systemFont(ofSize: 15, weight: .semibold)
+            v.setTitleColor(Asset.Color._0078Ff.color, for: .normal)
             v.translatesAutoresizingMaskIntoConstraints = false
-            
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
-            v.leftView = view
-            v.leftViewMode = .always
-        }
-    
-    let lTotalTransaction: UILabel = UILabel()
-        .configure { v in
-            v.text = "TOTAL TRANSACTION"
-            v.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-            v.textColor = Asset.Color.c5C5C5.color
-            v.textAlignment = .left
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    let tfTotalTransaction: UITextField = UITextField()
-        .configure { v in
-            v.keyboardType = .numberPad
-            v.placeholder = "Total Transaction ..."
-            v.backgroundColor = .systemGray6
-            v.layer.cornerRadius = 12
-            v.heightAnchor.constraint(equalToConstant: 40).isActive = true
-            v.translatesAutoresizingMaskIntoConstraints = false
-            
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0)).configure { v in
-                v.backgroundColor = .red
-                v.widthAnchor.constraint(equalToConstant: 40).isActive = true
-                v.heightAnchor.constraint(equalToConstant: v.frame.height).isActive = true
-                v.translatesAutoresizingMaskIntoConstraints = false
-            }
-            v.leftView = view
-            let rp = UILabel()
-                .configure { l in
-                    l.text = "Rp"
-                    l.textColor = .systemGray3
-                    l.center = view.center
-                    l.translatesAutoresizingMaskIntoConstraints = false
-                }
-            
-            view.addSubview(rp)
-            rp.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            rp.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-            
-            v.leftViewMode = .always
+            v.addTarget(self, action: #selector(addItemTapped), for: .touchUpInside)
         }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Create Repeat Bill"
+        title = "Create Expense"
         view.backgroundColor = .white
         // Do any additional setup after loading the view.
         setupViews()
         memberSelectCollection.delegate = self
         memberSelectCollection.dataSource = self
         
-        tfReminderTime.delegate = self
+        itemTableView.delegate = self
+        itemTableView.dataSource = self
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createTapped))
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.scrollView.layoutIfNeeded()
+        DispatchQueue.main.async {
+            self.itemTableView.heightAnchor.constraint(equalToConstant: (self.itemTableView.contentSize.height + 32) * 2.1 ).isActive = true
+            print("This: ", self.itemTableView.frame.height)
+            print("HEIGHT 1:",self.itemTableView.frame.height)
+            print("HEIGHT 2: ",self.itemTableView.contentSize.height)
+        }
     }
     
     @objc func iconButtonTapped() {
@@ -195,9 +166,29 @@ class CreateExpenseVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func addItemTapped() {
+        print("hello world")
+    }
 }
 
 extension CreateExpenseVC: CreateExpensePresenterToViewProtocol {
+    
+}
+
+extension CreateExpenseVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = itemTableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
     
 }
 
@@ -218,8 +209,6 @@ extension CreateExpenseVC: UICollectionViewDelegate, UICollectionViewDataSource,
         let cell = memberSelectCollection.dequeueReusableCell(withReuseIdentifier: "selectMemberCell", for: indexPath) as! SelectMemberCell
         return cell
     }
-    
-    
 }
 
 extension CreateExpenseVC {
@@ -279,36 +268,19 @@ extension CreateExpenseVC {
             v.translatesAutoresizingMaskIntoConstraints = false
             v.heightAnchor.constraint(equalToConstant: 70).isActive = true
             
-            v.addSubview(lReminderTime)
-            lReminderTime.topAnchor.constraint(equalTo: v.topAnchor).isActive = true
-            lReminderTime.leadingAnchor.constraint(equalTo: v.leadingAnchor).isActive = true
-            
-            v.addSubview(tfReminderTime)
-            tfReminderTime.topAnchor.constraint(equalTo: lReminderTime.bottomAnchor, constant: 10).isActive = true
-            tfReminderTime.leadingAnchor.constraint(equalTo: v.leadingAnchor).isActive = true
-            tfReminderTime.trailingAnchor.constraint(equalTo: v.trailingAnchor).isActive = true
-            
+            v.addSubview(bAddItem)
+            bAddItem.topAnchor.constraint(equalTo: v.topAnchor).isActive = true
+            bAddItem.leadingAnchor.constraint(equalTo: v.leadingAnchor).isActive = true
         }
         
-        let v5 = UIView().configure { v in
-            v.translatesAutoresizingMaskIntoConstraints = false
-            v.heightAnchor.constraint(equalToConstant: 70).isActive = true
-            
-            v.addSubview(lTotalTransaction)
-            lTotalTransaction.topAnchor.constraint(equalTo: v.topAnchor).isActive = true
-            lTotalTransaction.leadingAnchor.constraint(equalTo: v.leadingAnchor).isActive = true
-            
-            v.addSubview(tfTotalTransaction)
-            tfTotalTransaction.topAnchor.constraint(equalTo: lTotalTransaction.bottomAnchor, constant: 10).isActive = true
-            tfTotalTransaction.leadingAnchor.constraint(equalTo: v.leadingAnchor).isActive = true
-            tfTotalTransaction.trailingAnchor.constraint(equalTo: v.trailingAnchor).isActive = true
-        }
-
         container.addArrangedSubview(v1)
         container.addArrangedSubview(v2)
         container.addArrangedSubview(v3)
+        container.addArrangedSubview(itemTableView)
+        itemTableView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
+        itemTableView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
         container.addArrangedSubview(v4)
-        container.addArrangedSubview(v5)
+        
     }
     
     func setupScrollView() {
@@ -330,73 +302,10 @@ extension CreateExpenseVC {
     }
 }
 
-class SelectMemberCell: UICollectionViewCell {
-    let profileImage: UIImageView = UIImageView()
-        .configure { v in
-            v.image = Asset.Image._6.image
-            v.contentMode = .scaleAspectFill
-            
-            v.widthAnchor.constraint(equalToConstant: 60).isActive = true
-            v.heightAnchor.constraint(equalToConstant: 60).isActive = true
-            
-            v.layer.cornerRadius = 30
-            v.layer.masksToBounds = true
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    let lName: UILabel = UILabel()
-        .configure { v in
-            v.text = "Paul"
-            v.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-            v.textColor = Asset.Color._1F1F1F.color
-            v.textAlignment = .center
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    let bRemove: UIButton = UIButton()
-        .configure { v in
-            v.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-            v.tintColor = Asset.Color._0078Ff.color
-            v.widthAnchor.constraint(equalToConstant: 20).isActive = true
-            v.heightAnchor.constraint(equalToConstant: 20).isActive = true
-            v.translatesAutoresizingMaskIntoConstraints = false
-            v.addTarget(self, action: #selector(_remove), for: .touchUpInside)
-        }
-    
-    @objc func _remove() {
-        print("Removed...")
-    }
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        contentView.addSubview(profileImage)
-        profileImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        
-        contentView.addSubview(lName)
-        lName.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
-        lName.topAnchor.constraint(equalTo: profileImage.bottomAnchor, constant: 5).isActive = true
-        
-        contentView.addSubview(bRemove)
-        bRemove.topAnchor.constraint(equalTo: profileImage.topAnchor, constant: -5).isActive = true
-        bRemove.trailingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 7).isActive = true
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
-extension CreateExpenseVC :UITextFieldDelegate {
+extension CreateExpenseVC: UITextFieldDelegate {
     // Text Field
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
-        if textField == tfReminderTime {
-            print("Holla")
-            self.view.endEditing(true)
-        }
     }
 }
-
 

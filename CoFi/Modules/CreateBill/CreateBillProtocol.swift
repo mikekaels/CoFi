@@ -13,10 +13,13 @@ protocol CreateBillViewToPresenterProtocol: AnyObject {
     var view: CreateBillPresenterToViewProtocol? { get set }
     var interactor: CreateBillPresenterToInteractorProtocol? { get set }
     var router: CreateBillPresenterToRouterProtocol? { get set }
+    
+    func goToSelectReminderTime(from: CreateBillVC)
 }
 
 protocol CreateBillPresenterToRouterProtocol: AnyObject {
     func createModule() -> CreateBillVC
+    func goToSelectReminderTime(from: CreateBillVC)
 }
 
 protocol CreateBillPresenterToViewProtocol: AnyObject {

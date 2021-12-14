@@ -153,7 +153,7 @@ class DashboardVC: UIViewController {
     
     let expansesButtonLabel: UILabel = UILabel()
         .configure { v in
-            v.text = "Expanse"
+            v.text = "Expense"
             v.font = UIFont.systemFont(ofSize: 12, weight: .semibold)
             v.textAlignment = .center
             v.textColor = Asset.Color._1F1F1F.color

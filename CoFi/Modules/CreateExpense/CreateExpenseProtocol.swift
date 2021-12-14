@@ -14,11 +14,12 @@ protocol CreateExpenseViewToPresenterProtocol: AnyObject {
     var interactor: CreateExpensePresenterToInteractorProtocol? { get set }
     var router: CreateExpensePresenterToRouterProtocol? { get set }
     
-    
+    func goToAddItem(from: CreateExpenseVC)
 }
 
 protocol CreateExpensePresenterToRouterProtocol: AnyObject {
     func createModule() -> CreateExpenseVC
+    func goToAddItem(from: CreateExpenseVC)
 }
 
 protocol CreateExpensePresenterToViewProtocol: AnyObject {

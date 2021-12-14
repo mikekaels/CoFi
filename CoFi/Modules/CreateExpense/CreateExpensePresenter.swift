@@ -11,7 +11,9 @@ class CreateExpensePresenter: CreateExpenseViewToPresenterProtocol {
     var router: CreateExpensePresenterToRouterProtocol?
     var interactor: CreateExpensePresenterToInteractorProtocol?
     
-    
+    func goToAddItem(from: CreateExpenseVC) {
+        router?.goToAddItem(from: from)
+    }
 }
 
 extension CreateExpensePresenter: CreateExpenseInteractorToPresenterProtocol {

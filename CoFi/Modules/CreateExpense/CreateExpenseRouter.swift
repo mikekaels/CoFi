@@ -33,4 +33,9 @@ public class CreateExpenseRouter: CreateExpensePresenterToRouterProtocol{
         
         return view
     }
+    
+    func goToAddItem(from: CreateExpenseVC) {
+        let vc = AddItemRouter().createModule()
+        from.navigationController?.pushViewController(vc, animated: true)
+    }
 }

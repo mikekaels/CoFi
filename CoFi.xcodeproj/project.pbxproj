@@ -102,6 +102,12 @@
 		BD9BF5412767D70B0020CE8D /* UserDebtDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF53B2767D70B0020CE8D /* UserDebtDetailsInteractor.swift */; };
 		BD9BF5422767D70B0020CE8D /* UserDebtDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF53C2767D70B0020CE8D /* UserDebtDetailsProtocol.swift */; };
 		BD9BF5432767D70B0020CE8D /* UserDebtDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF53D2767D70B0020CE8D /* UserDebtDetailsVC.swift */; };
+		BDF765592768D0A9009AC3EF /* AddItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765532768D0A9009AC3EF /* AddItemPresenter.swift */; };
+		BDF7655A2768D0A9009AC3EF /* AddItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765542768D0A9009AC3EF /* AddItemRouter.swift */; };
+		BDF7655B2768D0A9009AC3EF /* AddItemModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765552768D0A9009AC3EF /* AddItemModels.swift */; };
+		BDF7655C2768D0A9009AC3EF /* AddItemInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765562768D0A9009AC3EF /* AddItemInteractor.swift */; };
+		BDF7655D2768D0A9009AC3EF /* AddItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765572768D0A9009AC3EF /* AddItemProtocol.swift */; };
+		BDF7655E2768D0A9009AC3EF /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765582768D0A9009AC3EF /* AddItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -202,6 +208,12 @@
 		BD9BF53B2767D70B0020CE8D /* UserDebtDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDebtDetailsInteractor.swift; sourceTree = "<group>"; };
 		BD9BF53C2767D70B0020CE8D /* UserDebtDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDebtDetailsProtocol.swift; sourceTree = "<group>"; };
 		BD9BF53D2767D70B0020CE8D /* UserDebtDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDebtDetailsVC.swift; sourceTree = "<group>"; };
+		BDF765532768D0A9009AC3EF /* AddItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPresenter.swift; sourceTree = "<group>"; };
+		BDF765542768D0A9009AC3EF /* AddItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemRouter.swift; sourceTree = "<group>"; };
+		BDF765552768D0A9009AC3EF /* AddItemModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemModels.swift; sourceTree = "<group>"; };
+		BDF765562768D0A9009AC3EF /* AddItemInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemInteractor.swift; sourceTree = "<group>"; };
+		BDF765572768D0A9009AC3EF /* AddItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemProtocol.swift; sourceTree = "<group>"; };
+		BDF765582768D0A9009AC3EF /* AddItemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
 		C49D66E500760FC89C4876C9 /* Pods-CoFi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.debug.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.debug.xcconfig"; sourceTree = "<group>"; };
 		D25AE8296CFB22F3A961C7E4 /* Pods-CoFi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoFi.release.xcconfig"; path = "Target Support Files/Pods-CoFi/Pods-CoFi.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -450,6 +462,7 @@
 		BD9BF4FE2767BBC60020CE8D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BDF765522768D093009AC3EF /* AddItem */,
 				BD9BF5372767D6F30020CE8D /* UserDebtDetails */,
 				BD9BF52A2767D6AA0020CE8D /* CreateDebt */,
 				BD9BF51D2767D58F0020CE8D /* CreateBill */,
@@ -529,6 +542,19 @@
 				BD9BF53D2767D70B0020CE8D /* UserDebtDetailsVC.swift */,
 			);
 			path = UserDebtDetails;
+			sourceTree = "<group>";
+		};
+		BDF765522768D093009AC3EF /* AddItem */ = {
+			isa = PBXGroup;
+			children = (
+				BDF765532768D0A9009AC3EF /* AddItemPresenter.swift */,
+				BDF765542768D0A9009AC3EF /* AddItemRouter.swift */,
+				BDF765552768D0A9009AC3EF /* AddItemModels.swift */,
+				BDF765562768D0A9009AC3EF /* AddItemInteractor.swift */,
+				BDF765572768D0A9009AC3EF /* AddItemProtocol.swift */,
+				BDF765582768D0A9009AC3EF /* AddItemVC.swift */,
+			);
+			path = AddItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -647,9 +673,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD9BF4D22766AC030020CE8D /* UserDefault.swift in Sources */,
+				BDF765592768D0A9009AC3EF /* AddItemPresenter.swift in Sources */,
 				BD9BF4CE2766AB9C0020CE8D /* Extension + Date.swift in Sources */,
 				BD9BF4F227678B9C0020CE8D /* CreateGroupPresenter.swift in Sources */,
 				BD9BF48A276607E50020CE8D /* GroupProtocol.swift in Sources */,
+				BDF7655C2768D0A9009AC3EF /* AddItemInteractor.swift in Sources */,
 				BD9BF5192767D53A0020CE8D /* CreateExpenseModels.swift in Sources */,
 				BD9BF5182767D53A0020CE8D /* CreateExpenseRouter.swift in Sources */,
 				BD9BF4A5276608420020CE8D /* TransactionProtocol.swift in Sources */,
@@ -682,6 +710,7 @@
 				BD9BF5322767D6C80020CE8D /* CreateDebtRouter.swift in Sources */,
 				BD9BF4E227675A640020CE8D /* GroupDetailsPresenter.swift in Sources */,
 				BD9BF5432767D70B0020CE8D /* UserDebtDetailsVC.swift in Sources */,
+				BDF7655A2768D0A9009AC3EF /* AddItemRouter.swift in Sources */,
 				BD9BF4B02766088C0020CE8D /* TabBarModels.swift in Sources */,
 				BD351CEF27683D5600A42054 /* SelectReminderTimeRouter.swift in Sources */,
 				BD9BF4A3276608420020CE8D /* TransactionModels.swift in Sources */,
@@ -698,6 +727,7 @@
 				BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */,
 				BD9BF488276607E50020CE8D /* GroupModels.swift in Sources */,
 				BD9BF51B2767D53A0020CE8D /* CreateExpenseProtocol.swift in Sources */,
+				BDF7655E2768D0A9009AC3EF /* AddItemVC.swift in Sources */,
 				BD9BF50F2767C3380020CE8D /* InsertGroupDetailVC.swift in Sources */,
 				BD9BF4A2276608420020CE8D /* TransactionRouter.swift in Sources */,
 				BD9BF5362767D6C80020CE8D /* CreateDebtVC.swift in Sources */,
@@ -714,10 +744,12 @@
 				BD9BF5342767D6C80020CE8D /* CreateDebtInteractor.swift in Sources */,
 				BD9BF499276608270020CE8D /* DashboardVC.swift in Sources */,
 				BD9BF495276608270020CE8D /* DashboardRouter.swift in Sources */,
+				BDF7655B2768D0A9009AC3EF /* AddItemModels.swift in Sources */,
 				BD9BF5022767BC270020CE8D /* Extension + UIButton.swift in Sources */,
 				BD9BF50E2767C3380020CE8D /* InsertGroupDetailProtocol.swift in Sources */,
 				BD9BF53F2767D70B0020CE8D /* UserDebtDetailsRouter.swift in Sources */,
 				BD9BF51C2767D53A0020CE8D /* CreateExpenseVC.swift in Sources */,
+				BDF7655D2768D0A9009AC3EF /* AddItemProtocol.swift in Sources */,
 				BD9BF4F327678B9C0020CE8D /* CreateGroupRouter.swift in Sources */,
 				BD9BF4E727675A640020CE8D /* GroupDetailsVC.swift in Sources */,
 				BD9BF4C5276635E80020CE8D /* Assets+Generated.swift in Sources */,

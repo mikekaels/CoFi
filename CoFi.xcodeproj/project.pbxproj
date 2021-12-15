@@ -14,6 +14,8 @@
 		BD351CF127683D5600A42054 /* SelectReminderTimeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */; };
 		BD351CF227683D5600A42054 /* SelectReminderTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */; };
 		BD351CF327683D5600A42054 /* SelectReminderTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */; };
+		BD835063276A40C500F27D1F /* CoreHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD835062276A40C500F27D1F /* CoreHelper.swift */; };
+		BD835065276A5ED600F27D1F /* UserSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD835064276A5ED600F27D1F /* UserSearchCell.swift */; };
 		BD8AFE202768AE6E00131FE5 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8AFE1F2768AE6E00131FE5 /* ItemCell.swift */; };
 		BD9BF46C276607090020CE8D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF46B276607090020CE8D /* AppDelegate.swift */; };
 		BD9BF46E276607090020CE8D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF46D276607090020CE8D /* SceneDelegate.swift */; };
@@ -134,6 +136,8 @@
 		BD351CEB27683D5600A42054 /* SelectReminderTimeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeInteractor.swift; sourceTree = "<group>"; };
 		BD351CEC27683D5600A42054 /* SelectReminderTimeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeProtocol.swift; sourceTree = "<group>"; };
 		BD351CED27683D5600A42054 /* SelectReminderTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectReminderTimeVC.swift; sourceTree = "<group>"; };
+		BD835062276A40C500F27D1F /* CoreHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreHelper.swift; sourceTree = "<group>"; };
+		BD835064276A5ED600F27D1F /* UserSearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSearchCell.swift; sourceTree = "<group>"; };
 		BD8AFE1F2768AE6E00131FE5 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		BD9BF468276607090020CE8D /* CoFi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoFi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD9BF46B276607090020CE8D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -398,6 +402,7 @@
 				BD9BF4B927660A070020CE8D /* Constants.swift */,
 				BD9BF4D12766AC030020CE8D /* UserDefault.swift */,
 				BDEE13AA276A12D30061ED19 /* FirebaseHelper.swift */,
+				BD835062276A40C500F27D1F /* CoreHelper.swift */,
 				BDEE13AC276A18E70061ED19 /* Models.swift */,
 			);
 			path = Shared;
@@ -484,6 +489,7 @@
 			isa = PBXGroup;
 			children = (
 				BD9BF4F92767B5F10020CE8D /* MemberSelectedCell.swift */,
+				BD835064276A5ED600F27D1F /* UserSearchCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -775,6 +781,7 @@
 				BD9BF5192767D53A0020CE8D /* CreateExpenseModels.swift in Sources */,
 				BD9BF5182767D53A0020CE8D /* CreateExpenseRouter.swift in Sources */,
 				BD9BF4A5276608420020CE8D /* TransactionProtocol.swift in Sources */,
+				BD835065276A5ED600F27D1F /* UserSearchCell.swift in Sources */,
 				BD9BF489276607E50020CE8D /* GroupInteractor.swift in Sources */,
 				BD9BF486276607E50020CE8D /* GroupPresenter.swift in Sources */,
 				BD9BF496276608270020CE8D /* DashboardModels.swift in Sources */,
@@ -815,6 +822,7 @@
 				BDEE13AD276A18E70061ED19 /* Models.swift in Sources */,
 				BD9BF4A3276608420020CE8D /* TransactionModels.swift in Sources */,
 				BD9BF4FD2767B6DF0020CE8D /* MemberGroupCell.swift in Sources */,
+				BD835063276A40C500F27D1F /* CoreHelper.swift in Sources */,
 				BD9BF5412767D70B0020CE8D /* UserDebtDetailsInteractor.swift in Sources */,
 				BD9BF494276608270020CE8D /* DashboardPresenter.swift in Sources */,
 				BD9BF50C2767C3380020CE8D /* InsertGroupDetailModels.swift in Sources */,

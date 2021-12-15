@@ -18,8 +18,14 @@ class CreateGroupPresenter: CreateGroupViewToPresenterProtocol {
     func goToInsertGroupDetail(from: CreateGroupVC) {
         router?.goToInsertGroupDetail(from: from)
     }
+    
+    func findUser(user: String) {
+        interactor?.findUser(user: user)
+    }
 }
 
 extension CreateGroupPresenter: CreateGroupInteractorToPresenterProtocol {
-
+    func didFetchUser(users: [User]) {
+        view?.didFetchUser(users: users)
+    }
 }

@@ -36,9 +36,8 @@ public class OnboardingRouter: OnboardingPresenterToRouterProtocol{
     
     func goToDashboard(from: OnboardingVC) {
         let vc = TabBarRouter().createModule()
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        nav.modalTransitionStyle = .crossDissolve
-        from.present(nav, animated: true, completion: nil)
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .flipHorizontal
+        from.present(vc, animated: true, completion: nil)
     }
 }

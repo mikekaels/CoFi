@@ -11,7 +11,9 @@ class InsertGroupDetailPresenter: InsertGroupDetailViewToPresenterProtocol {
     var router: InsertGroupDetailPresenterToRouterProtocol?
     var interactor: InsertGroupDetailPresenterToInteractorProtocol?
     
-    
+    func _dismiss(from: InsertGroupDetailVC, groupDetail: String) {
+        router?._dismiss(from: from, groupDetail: groupDetail)
+    }
 }
 
 extension InsertGroupDetailPresenter: InsertGroupDetailInteractorToPresenterProtocol {

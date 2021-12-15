@@ -33,4 +33,9 @@ public class InsertGroupDetailRouter: InsertGroupDetailPresenterToRouterProtocol
         
         return view
     }
+    
+    func _dismiss(from: InsertGroupDetailVC, groupDetail: String) {
+        from.delegate.didSubmitGroupDetails(groupDetail: groupDetail)
+        from.navigationController?.popViewController(animated: true)
+    }
 }

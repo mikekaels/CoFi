@@ -5,8 +5,15 @@
 //  Created by Santo Michael Sihombing on 14/12/21.
 //
 
+protocol MemberSelectedCellDelegate {
+    func removeUser(email: String)
+}
+
 import UIKit
 class MemberSelectedCell: UICollectionViewCell {
+    
+    var delegate: MemberSelectedCellDelegate!
+    var email: String!
     
     let profileImage: UIImageView = UIImageView()
         .configure { v in
@@ -41,7 +48,7 @@ class MemberSelectedCell: UICollectionViewCell {
         }
     
     @objc func _remove() {
-        print("Removed...")
+        self.delegate.removeUser(email: self.email)
     }
     
     override init(frame: CGRect) {

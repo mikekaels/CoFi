@@ -16,8 +16,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowsScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        
-        window?.rootViewController = OnboardingRouter().createModule()
+        let user = CoreHelper.getUser()
+        if  user.first != "" {
+            window?.rootViewController = TabBarRouter().createModule()
+        } else {
+            window?.rootViewController = OnboardingRouter().createModule()
+        }
         
         window?.makeKeyAndVisible()
         window?.windowScene = windowsScene

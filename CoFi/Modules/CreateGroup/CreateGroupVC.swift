@@ -6,11 +6,16 @@
 //  Copyright (c) 2021 ___ORGANIZATIONNAME___. All rights reserved.
 
 import UIKit
+import IQKeyboardManagerSwift
 
-class CreateGroupVC: UIViewController {
+class CreateGroupVC: UIViewController, MemberSelectedCellDelegate, InsertGroupDetailDelegate {
+    
     var presentor: CreateGroupViewToPresenterProtocol?
     public var delegate: CreateGroupDelegate!
     
+    var users: [User] = [User]()
+    
+    var selectedUser: [User] = [User]()
     
     let bBack: UIButton = UIButton()
         .configure { v in
@@ -79,6 +84,7 @@ class CreateGroupVC: UIViewController {
     
     let searchBar: UISearchBar = UISearchBar()
             .configure { v in
+                v.keyboardType = .emailAddress
                 v.placeholder = "Search..."
                 v.searchBarStyle = .minimal
                 v.barStyle = .default
@@ -91,7 +97,6 @@ class CreateGroupVC: UIViewController {
             v.register(userSearchCell.self, forCellReuseIdentifier: "userSearchCell")
             v.translatesAutoresizingMaskIntoConstraints = false
             v.separatorStyle = .none
-            v.contentInset.top = 30
             v.contentInset.bottom = 30
         }
     
@@ -106,6 +111,9 @@ class CreateGroupVC: UIViewController {
         
         userSearchTableView.delegate = self
         userSearchTableView.dataSource = self
+        
+        searchBar.delegate = self
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -127,7 +135,11 @@ class CreateGroupVC: UIViewController {
     }
 
     @objc func _createButtonTapped() {
-        print("Creating...")
+        guard let groupName = lGroupName.titleLabel?.text else {
+            return
+        }
+        
+        print()
     }
     
     @objc func groupImageTapped() {
@@ -137,20 +149,43 @@ class CreateGroupVC: UIViewController {
     @objc func groupNameTapped() {
         presentor?.goToInsertGroupDetail(from: self)
     }
+    
+    // delegate
+    func removeUser(email: String) {
+        self.selectedUser.removeAll(where: {$0.email == email})
+        DispatchQueue.main.async {
+            self.memberSelectedCollection.reloadData()
+            self.userSearchTableView.reloadData()
+        }
+    }
+    
+    func didSubmitGroupDetails(groupDetail: String) {
+        DispatchQueue.main.async {
+            self.lGroupName.setTitle(groupDetail, for: .normal)
+        }
+    }
 }
 
 extension CreateGroupVC: CreateGroupPresenterToViewProtocol {
-    
+    func didFetchUser(users: [User]) {
+        self.users = users
+        userSearchTableView.reloadData()
+    }
 }
 
 extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 6
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userSearchTableView.dequeueReusableCell(withIdentifier: "userSearchCell", for: indexPath) as! userSearchCell
+        let user = users[indexPath.row]
+        cell.lUser.text = "\(user.first) \(user.second)"
+        cell.lPhone.text = "\(user.email)"
+        cell.profileImage.kf.setImage(with: URL(string: user.profileImageUrl))
         cell.checkBox.addTarget(cell, action: #selector(cell.checkBoxTapped), for: .touchUpInside)
+        
         return cell
     }
     
@@ -162,6 +197,18 @@ extension CreateGroupVC: UITableViewDelegate, UITableViewDataSource {
         tableView.deselectRow(at: indexPath, animated: true)
         let cell = tableView.cellForRow(at: indexPath) as! userSearchCell
         cell.checkBoxTapped()
+        
+        if cell.isChecked {
+            selectedUser.append(users[indexPath.row])
+            DispatchQueue.main.async {
+                self.memberSelectedCollection.reloadData()
+            }
+        } else {
+            selectedUser.removeAll(where: {$0.email == users[indexPath.row].email})
+            DispatchQueue.main.async {
+                self.memberSelectedCollection.reloadData()
+            }
+        }
     }
 }
 
@@ -176,13 +223,31 @@ extension CreateGroupVC: UICollectionViewDelegate, UICollectionViewDataSource, U
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return selectedUser.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = memberSelectedCollection.dequeueReusableCell(withReuseIdentifier: "memberSelectedCell", for: indexPath) as! MemberSelectedCell
+        let user = selectedUser[indexPath.row]
+        
+        cell.profileImage.kf.setImage(with: URL(string: user.profileImageUrl))
+        cell.lName.text = user.first
+        cell.email = user.email
+        
+        cell.delegate = self
         return cell
     }
+}
+
+extension CreateGroupVC: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let searchText = searchBar.text {
+            presentor?.findUser(user: searchText)
+        }
+        searchBar.resignFirstResponder()
+    }
+    
+    
 }
 
 extension CreateGroupVC {
@@ -236,82 +301,3 @@ extension CreateGroupVC {
     }
 }
 
-class userSearchCell: UITableViewCell {
-    let profileImage: UIImageView = UIImageView()
-        .configure { v in
-            v.image = Asset.Image._6.image
-            v.contentMode = .scaleAspectFill
-            v.layer.cornerRadius = 20
-            v.layer.masksToBounds = true
-            v.heightAnchor.constraint(equalToConstant: 50).isActive = true
-            v.widthAnchor.constraint(equalToConstant: 50).isActive = true
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    let lUser = UILabel()
-        .configure { v in
-            v.text = "Blake"
-            v.font = UIFont.systemFont(ofSize: 16, weight: .medium)
-            v.textAlignment = .left
-            v.textColor = Asset.Color._1F1F1F.color
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    let lPhone = UILabel()
-        .configure { v in
-            v.text = "0673373222"
-            v.font = UIFont.systemFont(ofSize: 12, weight: .medium)
-            v.textAlignment = .left
-            v.textColor = Asset.Color.a9A9A9.color
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    var isChecked: Bool = false
-    
-    var checkBox: UIButton = UIButton()
-        .configure { v in
-            v.setImage(UIImage(systemName:"circle"), for: .normal)
-            v.widthAnchor.constraint(equalToConstant: 20).isActive = true
-            v.heightAnchor.constraint(equalToConstant: 20).isActive = true
-            v.translatesAutoresizingMaskIntoConstraints = false
-        }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
-    
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-        setupViews()
-    }
-    
-    func setupViews() {
-        contentView.addSubview(profileImage)
-        profileImage.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        profileImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 26).isActive = true
-        
-        contentView.addSubview(lUser)
-        lUser.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20).isActive = true
-        lUser.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15).isActive = true
-        
-        contentView.addSubview(lPhone)
-        lPhone.leadingAnchor.constraint(equalTo: profileImage.trailingAnchor, constant: 20).isActive = true
-        lPhone.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -15).isActive = true
-        
-        contentView.addSubview(checkBox)
-        checkBox.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
-        checkBox.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -30).isActive = true
-        
-        
-    }
-    
-    @objc public func checkBoxTapped() {
-        if isChecked {
-            isChecked = false
-            checkBox.setImage(UIImage(systemName: "circle"), for: .normal)
-        } else {
-            isChecked = true
-            checkBox.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-        }
-    }
-}

@@ -9,3 +9,16 @@
 class CreateGroupInteractor: CreateGroupPresenterToInteractorProtocol {
     var presenter: CreateGroupInteractorToPresenterProtocol?
 }
+
+extension CreateGroupInteractor {
+    func findUser(user: String) {
+        FirebaseHelper.getUser(userEmail: user) { result in
+            switch result {
+            case .success(let user):
+                self.presenter?.didFetchUser(users: user)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+}

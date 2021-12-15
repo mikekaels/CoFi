@@ -38,7 +38,7 @@ class InsertGroupDetailVC: UIViewController {
     }
     
     @objc func submitTapped() {
-        self.navigationController?.popViewController(animated: true)
+        presentor?._dismiss(from: self, groupDetail: tfName.text!)
     }
     
     func setupViews() {

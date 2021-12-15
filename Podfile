@@ -3,4 +3,5 @@ target 'CoFi' do
 	pod 'IQKeyboardManagerSwift'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
+  pod 'Kingfisher', '~> 7.0'
 end

@@ -104,4 +104,36 @@ class FirebaseHelper {
             }
         }
     }
+    
+    static func getUser(userEmail: String,completion: @escaping(Result<[User], Error>) -> ()) {
+        print("EMAIL: ",userEmail)
+        FirebaseHelper().db.collection("users")
+            .whereField("email", isEqualTo: userEmail)
+            .getDocuments { (querySnapshot, err) in
+                if let err = err {
+                    completion(.failure(err))
+                } else {
+                    var users: [User] = []
+                    for document in querySnapshot!.documents {
+                        let first = document.data()["first"] as? String ?? ""
+                        let second = document.data()["second"] as? String ?? ""
+                        let email = document.data()["email"] as? String ?? ""
+                        let appleUserId = document.data()["appleUserId"] as? String ?? ""
+                        let profileImageUrl = document.data()["profileImageUrl"] as? String ?? ""
+                        let accountNumber = document.data()["accountNumber"] as? Int ?? 0
+                        let bankName = document.data()["bankName"] as? String ?? ""
+                        let groupIds = document.data()["groupIds"] as? [String] ?? [""]
+                        
+                        let result = User(first: first, second: second, email: email, appleUserId: appleUserId, profileImageUrl: profileImageUrl, accountNumber: accountNumber, bankName: bankName, groupIds: groupIds)
+                        
+                        users.append(result)
+                    }
+                    
+                    DispatchQueue.main.async {
+                        completion(.success(users))
+                    }
+                    
+                }
+            }
+    }
 }

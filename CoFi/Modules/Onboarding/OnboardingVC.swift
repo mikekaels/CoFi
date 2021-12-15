@@ -35,6 +35,7 @@ class OnboardingVC: UIViewController {
 
 extension OnboardingVC: OnboardingPresenterToViewProtocol {
     func didSuccessLogin(user: User) {
+        CoreHelper.saveUser(first: user.first, second: user.second, email: user.email, appleUserId: user.appleUserId, profileImageUrl: user.profileImageUrl)
         presentor?.goToDashboard(from: self)
     }
 }

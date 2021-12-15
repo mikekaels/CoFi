@@ -40,6 +40,7 @@ public class CreateGroupRouter: CreateGroupPresenterToRouterProtocol{
     
     func goToInsertGroupDetail(from: CreateGroupVC) {
         let vc = InsertGroupDetailRouter().createModule()
+        vc.delegate = from
         from.navigationController?.pushViewController(vc, animated: true)
     }
 }

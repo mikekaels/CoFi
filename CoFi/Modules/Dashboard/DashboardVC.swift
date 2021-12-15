@@ -6,6 +6,7 @@
 //  Copyright (c) 2021 ___ORGANIZATIONNAME___. All rights reserved.
 
 import UIKit
+import Kingfisher
 
 class DashboardVC: UIViewController {
     var presentor: DashboardViewToPresenterProtocol?
@@ -55,11 +56,11 @@ class DashboardVC: UIViewController {
             v.addTarget(self, action: #selector(groupSelectTapped), for: .touchUpInside)
         }
     
-    let profileButton: UIButton = UIButton()
+    let profileButton: UIButton = UIButton(type: .custom)
         .configure { v in
             v.setImage(Asset.Image._1.image, for: .normal)
             v.contentMode = .scaleAspectFill
-            
+            v.clipsToBounds = true
             v.widthAnchor.constraint(equalToConstant: 50).isActive = true
             v.heightAnchor.constraint(equalToConstant: 50).isActive = true
             
@@ -230,6 +231,7 @@ class DashboardVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
+        getData()
         
         friendOweToYouCollection.delegate = self
         friendOweToYouCollection.dataSource = self
@@ -251,6 +253,17 @@ class DashboardVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         showNavigationBar(animated: animated)
+    }
+    
+    func getData() {
+        let user = CoreHelper.getUser()
+        if user.profileImageUrl != "" {
+            let url = URL(string: user.profileImageUrl)
+            self.profileButton.kf
+                .setImage(with: url,
+                          for: .normal)
+        }
+        self.greetingLabel.text = "Hello \(user.first)"
     }
     
     @objc func profileTapped() {
@@ -298,7 +311,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
                 
             } else {
                 
-            return CGSize(width: friendOweToYou[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 20, height: 34)
+                return CGSize(width: friendOweToYou[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 20, height: 34)
                 
             }
         case youOweToYourFriendCollection:
@@ -309,7 +322,7 @@ extension DashboardVC: UICollectionViewDelegateFlowLayout, UICollectionViewDataS
                 
             } else {
                 
-            return CGSize(width: youOweToYourFriend[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 20, height: 34)
+                return CGSize(width: youOweToYourFriend[indexPath.item].size(withAttributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: 17)]).width + 20, height: 34)
                 
             }
         default:
@@ -436,25 +449,25 @@ extension DashboardVC {
         mainCard.addSubview(lmonthSpending)
         lmonthSpending.topAnchor.constraint(equalTo: mainCard.topAnchor, constant: 20).isActive = true
         lmonthSpending.leadingAnchor.constraint(equalTo: mainCard.leadingAnchor, constant: 20).isActive = true
-
+        
         mainCard.addSubview(ltotalSpending)
         ltotalSpending.topAnchor.constraint(equalTo: lmonthSpending.bottomAnchor, constant: 0).isActive = true
         ltotalSpending.leadingAnchor.constraint(equalTo: mainCard.leadingAnchor, constant: 20).isActive = true
-
+        
         mainCard.addSubview(lfriendOweToYou)
         lfriendOweToYou.topAnchor.constraint(equalTo: ltotalSpending.bottomAnchor, constant: 10).isActive = true
         lfriendOweToYou.leadingAnchor.constraint(equalTo: mainCard.leadingAnchor, constant: 20).isActive = true
-
+        
         mainCard.addSubview(friendOweToYouCollection)
         friendOweToYouCollection.topAnchor.constraint(equalTo: lfriendOweToYou.bottomAnchor, constant: 5).isActive = true
         friendOweToYouCollection.leadingAnchor.constraint(equalTo: mainCard.leadingAnchor, constant: 0).isActive = true
         friendOweToYouCollection.trailingAnchor.constraint(equalTo: mainCard.trailingAnchor).isActive = true
         friendOweToYouCollection.heightAnchor.constraint(equalToConstant: 34).isActive = true
-
+        
         mainCard.addSubview(lYouOweToYourFriend)
         lYouOweToYourFriend.topAnchor.constraint(equalTo: friendOweToYouCollection.bottomAnchor, constant: 15).isActive = true
         lYouOweToYourFriend.leadingAnchor.constraint(equalTo: mainCard.leadingAnchor, constant: 20).isActive = true
-
+        
         mainCard.addSubview(youOweToYourFriendCollection)
         youOweToYourFriendCollection.topAnchor.constraint(equalTo: lYouOweToYourFriend.bottomAnchor, constant: 5).isActive = true
         youOweToYourFriendCollection.leadingAnchor.constraint(equalTo: mainCard.leadingAnchor, constant: 0).isActive = true
@@ -462,30 +475,30 @@ extension DashboardVC {
         youOweToYourFriendCollection.heightAnchor.constraint(equalToConstant: 34).isActive = true
         
         let v3: UIView = UIView().configure { v in
-                v.heightAnchor.constraint(equalToConstant: 70).isActive = true
-                v.translatesAutoresizingMaskIntoConstraints = false
-                
-                v.addSubview(billButton)
-                billButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 10).isActive = true
-                billButton.centerXAnchor.constraint(equalTo: v.centerXAnchor).isActive = true
-                v.addSubview(billButtonLabel)
-                billButtonLabel.topAnchor.constraint(equalTo: billButton.bottomAnchor, constant: 5).isActive = true
-                billButtonLabel.centerXAnchor.constraint(equalTo: billButton.centerXAnchor).isActive = true
-                
-                v.addSubview(expansesButton)
-                expansesButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 10).isActive = true
-                expansesButton.trailingAnchor.constraint(equalTo: billButton.leadingAnchor, constant: -25).isActive = true
-                v.addSubview(expansesButtonLabel)
-                expansesButtonLabel.topAnchor.constraint(equalTo: expansesButton.bottomAnchor, constant: 5).isActive = true
-                expansesButtonLabel.centerXAnchor.constraint(equalTo: expansesButton.centerXAnchor).isActive = true
-                
-                v.addSubview(debtButton)
-                debtButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 10).isActive = true
-                debtButton.leadingAnchor.constraint(equalTo: billButton.trailingAnchor, constant: 25).isActive = true
-                v.addSubview(debtButtonLabel)
-                debtButtonLabel.topAnchor.constraint(equalTo: debtButton.bottomAnchor, constant: 5).isActive = true
-                debtButtonLabel.centerXAnchor.constraint(equalTo: debtButton.centerXAnchor).isActive = true
-            }
+            v.heightAnchor.constraint(equalToConstant: 70).isActive = true
+            v.translatesAutoresizingMaskIntoConstraints = false
+            
+            v.addSubview(billButton)
+            billButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 10).isActive = true
+            billButton.centerXAnchor.constraint(equalTo: v.centerXAnchor).isActive = true
+            v.addSubview(billButtonLabel)
+            billButtonLabel.topAnchor.constraint(equalTo: billButton.bottomAnchor, constant: 5).isActive = true
+            billButtonLabel.centerXAnchor.constraint(equalTo: billButton.centerXAnchor).isActive = true
+            
+            v.addSubview(expansesButton)
+            expansesButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 10).isActive = true
+            expansesButton.trailingAnchor.constraint(equalTo: billButton.leadingAnchor, constant: -25).isActive = true
+            v.addSubview(expansesButtonLabel)
+            expansesButtonLabel.topAnchor.constraint(equalTo: expansesButton.bottomAnchor, constant: 5).isActive = true
+            expansesButtonLabel.centerXAnchor.constraint(equalTo: expansesButton.centerXAnchor).isActive = true
+            
+            v.addSubview(debtButton)
+            debtButton.topAnchor.constraint(equalTo: v.topAnchor, constant: 10).isActive = true
+            debtButton.leadingAnchor.constraint(equalTo: billButton.trailingAnchor, constant: 25).isActive = true
+            v.addSubview(debtButtonLabel)
+            debtButtonLabel.topAnchor.constraint(equalTo: debtButton.bottomAnchor, constant: 5).isActive = true
+            debtButtonLabel.centerXAnchor.constraint(equalTo: debtButton.centerXAnchor).isActive = true
+        }
         
         
         

@@ -16,6 +16,8 @@ protocol CreateGroupViewToPresenterProtocol: AnyObject {
     
     func back(from: CreateGroupVC)
     func goToInsertGroupDetail(from: CreateGroupVC)
+    func findUser(user: String)
+    
 }
 
 protocol CreateGroupPresenterToRouterProtocol: AnyObject {
@@ -25,14 +27,14 @@ protocol CreateGroupPresenterToRouterProtocol: AnyObject {
 }
 
 protocol CreateGroupPresenterToViewProtocol: AnyObject {
-
+    func didFetchUser(users: [User])
 }
 
 protocol CreateGroupInteractorToPresenterProtocol: AnyObject {
-
+    func didFetchUser(users: [User])
 }
 
 protocol CreateGroupPresenterToInteractorProtocol: AnyObject {
     var presenter: CreateGroupInteractorToPresenterProtocol? { get set }
-
+    func findUser(user: String)
 }

@@ -38,4 +38,9 @@ public class CreateBillRouter: CreateBillPresenterToRouterProtocol{
         let vc = SelectReminderTimeRouter().createModule()
         from.navigationController?.pushViewController(vc, animated: true)
     }
+    
+    func goToIcon(from: CreateBillVC) {
+        let vc = IconRouter().createModule()
+        from.navigationController?.pushViewController(vc, animated: true)
+    }
 }

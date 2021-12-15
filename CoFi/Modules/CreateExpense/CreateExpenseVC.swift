@@ -159,7 +159,7 @@ class CreateExpenseVC: UIViewController {
     }
     
     @objc func iconButtonTapped() {
-        print("Hello world")
+        presentor?.goToIcon(from: self)
     }
     
     @objc func createTapped() {
@@ -207,7 +207,13 @@ extension CreateExpenseVC: UICollectionViewDelegate, UICollectionViewDataSource,
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = memberSelectCollection.dequeueReusableCell(withReuseIdentifier: "selectMemberCell", for: indexPath) as! SelectMemberCell
+        cell.cellSelected = false
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let cell = collectionView.cellForItem(at: indexPath) as! SelectMemberCell
+        cell.cellSelected = !cell.cellSelected
     }
 }
 

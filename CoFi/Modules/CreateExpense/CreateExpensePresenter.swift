@@ -14,6 +14,10 @@ class CreateExpensePresenter: CreateExpenseViewToPresenterProtocol {
     func goToAddItem(from: CreateExpenseVC) {
         router?.goToAddItem(from: from)
     }
+    
+    func goToIcon(from: CreateExpenseVC) {
+        router?.goToIcon(from: from)
+    }
 }
 
 extension CreateExpensePresenter: CreateExpenseInteractorToPresenterProtocol {

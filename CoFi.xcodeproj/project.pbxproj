@@ -102,6 +102,22 @@
 		BD9BF5412767D70B0020CE8D /* UserDebtDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF53B2767D70B0020CE8D /* UserDebtDetailsInteractor.swift */; };
 		BD9BF5422767D70B0020CE8D /* UserDebtDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF53C2767D70B0020CE8D /* UserDebtDetailsProtocol.swift */; };
 		BD9BF5432767D70B0020CE8D /* UserDebtDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD9BF53D2767D70B0020CE8D /* UserDebtDetailsVC.swift */; };
+		BDEE138A2769D8380061ED19 /* SelectMemberCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE13892769D8380061ED19 /* SelectMemberCell.swift */; };
+		BDEE13922769DC9A0061ED19 /* IconPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE138C2769DC9A0061ED19 /* IconPresenter.swift */; };
+		BDEE13932769DC9A0061ED19 /* IconRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE138D2769DC9A0061ED19 /* IconRouter.swift */; };
+		BDEE13942769DC9A0061ED19 /* IconModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE138E2769DC9A0061ED19 /* IconModels.swift */; };
+		BDEE13952769DC9A0061ED19 /* IconInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE138F2769DC9A0061ED19 /* IconInteractor.swift */; };
+		BDEE13962769DC9A0061ED19 /* IconProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE13902769DC9A0061ED19 /* IconProtocol.swift */; };
+		BDEE13972769DC9A0061ED19 /* IconVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE13912769DC9A0061ED19 /* IconVC.swift */; };
+		BDEE13992769FD590061ED19 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BDEE13982769FD590061ED19 /* GoogleService-Info.plist */; };
+		BDEE13A12769FDD40061ED19 /* OnboardingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE139B2769FDD40061ED19 /* OnboardingPresenter.swift */; };
+		BDEE13A22769FDD40061ED19 /* OnboardingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE139C2769FDD40061ED19 /* OnboardingRouter.swift */; };
+		BDEE13A32769FDD40061ED19 /* OnboardingModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE139D2769FDD40061ED19 /* OnboardingModels.swift */; };
+		BDEE13A42769FDD40061ED19 /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE139E2769FDD40061ED19 /* OnboardingInteractor.swift */; };
+		BDEE13A52769FDD40061ED19 /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE139F2769FDD40061ED19 /* OnboardingProtocol.swift */; };
+		BDEE13A62769FDD40061ED19 /* OnboardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE13A02769FDD40061ED19 /* OnboardingVC.swift */; };
+		BDEE13AB276A12D30061ED19 /* FirebaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE13AA276A12D30061ED19 /* FirebaseHelper.swift */; };
+		BDEE13AD276A18E70061ED19 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDEE13AC276A18E70061ED19 /* Models.swift */; };
 		BDF765592768D0A9009AC3EF /* AddItemPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765532768D0A9009AC3EF /* AddItemPresenter.swift */; };
 		BDF7655A2768D0A9009AC3EF /* AddItemRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765542768D0A9009AC3EF /* AddItemRouter.swift */; };
 		BDF7655B2768D0A9009AC3EF /* AddItemModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDF765552768D0A9009AC3EF /* AddItemModels.swift */; };
@@ -208,6 +224,23 @@
 		BD9BF53B2767D70B0020CE8D /* UserDebtDetailsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDebtDetailsInteractor.swift; sourceTree = "<group>"; };
 		BD9BF53C2767D70B0020CE8D /* UserDebtDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDebtDetailsProtocol.swift; sourceTree = "<group>"; };
 		BD9BF53D2767D70B0020CE8D /* UserDebtDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDebtDetailsVC.swift; sourceTree = "<group>"; };
+		BDEE13892769D8380061ED19 /* SelectMemberCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMemberCell.swift; sourceTree = "<group>"; };
+		BDEE138C2769DC9A0061ED19 /* IconPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconPresenter.swift; sourceTree = "<group>"; };
+		BDEE138D2769DC9A0061ED19 /* IconRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconRouter.swift; sourceTree = "<group>"; };
+		BDEE138E2769DC9A0061ED19 /* IconModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconModels.swift; sourceTree = "<group>"; };
+		BDEE138F2769DC9A0061ED19 /* IconInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconInteractor.swift; sourceTree = "<group>"; };
+		BDEE13902769DC9A0061ED19 /* IconProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconProtocol.swift; sourceTree = "<group>"; };
+		BDEE13912769DC9A0061ED19 /* IconVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconVC.swift; sourceTree = "<group>"; };
+		BDEE13982769FD590061ED19 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BDEE139B2769FDD40061ED19 /* OnboardingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPresenter.swift; sourceTree = "<group>"; };
+		BDEE139C2769FDD40061ED19 /* OnboardingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingRouter.swift; sourceTree = "<group>"; };
+		BDEE139D2769FDD40061ED19 /* OnboardingModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModels.swift; sourceTree = "<group>"; };
+		BDEE139E2769FDD40061ED19 /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
+		BDEE139F2769FDD40061ED19 /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
+		BDEE13A02769FDD40061ED19 /* OnboardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVC.swift; sourceTree = "<group>"; };
+		BDEE13A7276A01270061ED19 /* CoFi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoFi.entitlements; sourceTree = "<group>"; };
+		BDEE13AA276A12D30061ED19 /* FirebaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseHelper.swift; sourceTree = "<group>"; };
+		BDEE13AC276A18E70061ED19 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		BDF765532768D0A9009AC3EF /* AddItemPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemPresenter.swift; sourceTree = "<group>"; };
 		BDF765542768D0A9009AC3EF /* AddItemRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemRouter.swift; sourceTree = "<group>"; };
 		BDF765552768D0A9009AC3EF /* AddItemModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemModels.swift; sourceTree = "<group>"; };
@@ -289,12 +322,14 @@
 		BD9BF46A276607090020CE8D /* CoFi */ = {
 			isa = PBXGroup;
 			children = (
+				BDEE13A7276A01270061ED19 /* CoFi.entitlements */,
 				BD9BF4C12766337A0020CE8D /* SwiftGen */,
 				BD9BF4BB27660BB90020CE8D /* Extensions */,
 				BD9BF4B4276609AD0020CE8D /* Shared */,
 				BD9BF4FE2767BBC60020CE8D /* Modules */,
 				BD9BF46B276607090020CE8D /* AppDelegate.swift */,
 				BD9BF46D276607090020CE8D /* SceneDelegate.swift */,
+				BDEE13982769FD590061ED19 /* GoogleService-Info.plist */,
 				BD9BF4742766070B0020CE8D /* Assets.xcassets */,
 				BD9BF4762766070B0020CE8D /* LaunchScreen.storyboard */,
 				BD9BF4792766070B0020CE8D /* Info.plist */,
@@ -362,6 +397,8 @@
 			children = (
 				BD9BF4B927660A070020CE8D /* Constants.swift */,
 				BD9BF4D12766AC030020CE8D /* UserDefault.swift */,
+				BDEE13AA276A12D30061ED19 /* FirebaseHelper.swift */,
+				BDEE13AC276A18E70061ED19 /* Models.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -462,6 +499,8 @@
 		BD9BF4FE2767BBC60020CE8D /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				BDEE139A2769FDBA0061ED19 /* Onboarding */,
+				BDEE138B2769DC870061ED19 /* Icon */,
 				BDF765522768D093009AC3EF /* AddItem */,
 				BD9BF5372767D6F30020CE8D /* UserDebtDetails */,
 				BD9BF52A2767D6AA0020CE8D /* CreateDebt */,
@@ -507,6 +546,7 @@
 		BD9BF51D2767D58F0020CE8D /* CreateBill */ = {
 			isa = PBXGroup;
 			children = (
+				BDEE13882769D8260061ED19 /* views */,
 				BD351CE727683D3E00A42054 /* SelectReminderTime */,
 				BD9BF51E2767D5A70020CE8D /* CreateBillPresenter.swift */,
 				BD9BF51F2767D5A70020CE8D /* CreateBillRouter.swift */,
@@ -544,6 +584,40 @@
 			path = UserDebtDetails;
 			sourceTree = "<group>";
 		};
+		BDEE13882769D8260061ED19 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BDEE13892769D8380061ED19 /* SelectMemberCell.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BDEE138B2769DC870061ED19 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				BDEE138C2769DC9A0061ED19 /* IconPresenter.swift */,
+				BDEE138D2769DC9A0061ED19 /* IconRouter.swift */,
+				BDEE138E2769DC9A0061ED19 /* IconModels.swift */,
+				BDEE138F2769DC9A0061ED19 /* IconInteractor.swift */,
+				BDEE13902769DC9A0061ED19 /* IconProtocol.swift */,
+				BDEE13912769DC9A0061ED19 /* IconVC.swift */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
+		BDEE139A2769FDBA0061ED19 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				BDEE139B2769FDD40061ED19 /* OnboardingPresenter.swift */,
+				BDEE139C2769FDD40061ED19 /* OnboardingRouter.swift */,
+				BDEE139D2769FDD40061ED19 /* OnboardingModels.swift */,
+				BDEE139E2769FDD40061ED19 /* OnboardingInteractor.swift */,
+				BDEE139F2769FDD40061ED19 /* OnboardingProtocol.swift */,
+				BDEE13A02769FDD40061ED19 /* OnboardingVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		BDF765522768D093009AC3EF /* AddItem */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +643,7 @@
 				BD9BF465276607090020CE8D /* Frameworks */,
 				BD9BF466276607090020CE8D /* Resources */,
 				BD9BF4C0276632010020CE8D /* SwiftGen */,
+				C509EE2C51A6CE1ABE9B2F0C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -619,6 +694,7 @@
 			files = (
 				BD9BF4782766070B0020CE8D /* LaunchScreen.storyboard in Resources */,
 				BD9BF4752766070B0020CE8D /* Assets.xcassets in Resources */,
+				BDEE13992769FD590061ED19 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -665,6 +741,23 @@
 			shellPath = /bin/sh;
 			shellScript = "Pods/SwiftGen/bin/swiftgen\n";
 		};
+		C509EE2C51A6CE1ABE9B2F0C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoFi/Pods-CoFi-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CoFi/Pods-CoFi-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CoFi/Pods-CoFi-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -672,6 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDEE13AB276A12D30061ED19 /* FirebaseHelper.swift in Sources */,
 				BD9BF4D22766AC030020CE8D /* UserDefault.swift in Sources */,
 				BDF765592768D0A9009AC3EF /* AddItemPresenter.swift in Sources */,
 				BD9BF4CE2766AB9C0020CE8D /* Extension + Date.swift in Sources */,
@@ -684,8 +778,10 @@
 				BD9BF489276607E50020CE8D /* GroupInteractor.swift in Sources */,
 				BD9BF486276607E50020CE8D /* GroupPresenter.swift in Sources */,
 				BD9BF496276608270020CE8D /* DashboardModels.swift in Sources */,
+				BDEE13A32769FDD40061ED19 /* OnboardingModels.swift in Sources */,
 				BD351CF027683D5600A42054 /* SelectReminderTimeModels.swift in Sources */,
 				BD9BF50D2767C3380020CE8D /* InsertGroupDetailInteractor.swift in Sources */,
+				BDEE13972769DC9A0061ED19 /* IconVC.swift in Sources */,
 				BD9BF46C276607090020CE8D /* AppDelegate.swift in Sources */,
 				BD9BF498276608270020CE8D /* DashboardProtocol.swift in Sources */,
 				BD351CF227683D5600A42054 /* SelectReminderTimeProtocol.swift in Sources */,
@@ -702,8 +798,11 @@
 				BD9BF4AE2766088C0020CE8D /* TabBarPresenter.swift in Sources */,
 				BD9BF4DA27674A4E0020CE8D /* GroupCell.swift in Sources */,
 				BD9BF5172767D53A0020CE8D /* CreateExpensePresenter.swift in Sources */,
+				BDEE13A52769FDD40061ED19 /* OnboardingProtocol.swift in Sources */,
 				BD9BF4F527678B9C0020CE8D /* CreateGroupInteractor.swift in Sources */,
+				BDEE13A62769FDD40061ED19 /* OnboardingVC.swift in Sources */,
 				BD9BF4D02766ABB90020CE8D /* Extension + String.swift in Sources */,
+				BDEE13962769DC9A0061ED19 /* IconProtocol.swift in Sources */,
 				BD9BF4C8276651840020CE8D /* MainCardCell.swift in Sources */,
 				BD9BF5332767D6C80020CE8D /* CreateDebtModels.swift in Sources */,
 				BD9BF4A4276608420020CE8D /* TransactionInteractor.swift in Sources */,
@@ -713,6 +812,7 @@
 				BDF7655A2768D0A9009AC3EF /* AddItemRouter.swift in Sources */,
 				BD9BF4B02766088C0020CE8D /* TabBarModels.swift in Sources */,
 				BD351CEF27683D5600A42054 /* SelectReminderTimeRouter.swift in Sources */,
+				BDEE13AD276A18E70061ED19 /* Models.swift in Sources */,
 				BD9BF4A3276608420020CE8D /* TransactionModels.swift in Sources */,
 				BD9BF4FD2767B6DF0020CE8D /* MemberGroupCell.swift in Sources */,
 				BD9BF5412767D70B0020CE8D /* UserDebtDetailsInteractor.swift in Sources */,
@@ -725,6 +825,7 @@
 				BD351CF127683D5600A42054 /* SelectReminderTimeInteractor.swift in Sources */,
 				BD9BF4E627675A640020CE8D /* GroupDetailsProtocol.swift in Sources */,
 				BD9BF4D52766AF430020CE8D /* TransactionCell.swift in Sources */,
+				BDEE13A12769FDD40061ED19 /* OnboardingPresenter.swift in Sources */,
 				BD9BF488276607E50020CE8D /* GroupModels.swift in Sources */,
 				BD9BF51B2767D53A0020CE8D /* CreateExpenseProtocol.swift in Sources */,
 				BDF7655E2768D0A9009AC3EF /* AddItemVC.swift in Sources */,
@@ -753,21 +854,28 @@
 				BD9BF4F327678B9C0020CE8D /* CreateGroupRouter.swift in Sources */,
 				BD9BF4E727675A640020CE8D /* GroupDetailsVC.swift in Sources */,
 				BD9BF4C5276635E80020CE8D /* Assets+Generated.swift in Sources */,
+				BDEE13A22769FDD40061ED19 /* OnboardingRouter.swift in Sources */,
 				BD9BF4F627678B9C0020CE8D /* CreateGroupProtocol.swift in Sources */,
 				BD9BF4B22766088C0020CE8D /* TabBarProtocol.swift in Sources */,
 				BD9BF48B276607E50020CE8D /* GroupVC.swift in Sources */,
+				BDEE138A2769D8380061ED19 /* SelectMemberCell.swift in Sources */,
 				BD9BF50A2767C3380020CE8D /* InsertGroupDetailPresenter.swift in Sources */,
 				BD9BF4E327675A640020CE8D /* GroupDetailsRouter.swift in Sources */,
+				BDEE13952769DC9A0061ED19 /* IconInteractor.swift in Sources */,
+				BDEE13A42769FDD40061ED19 /* OnboardingInteractor.swift in Sources */,
 				BD351CEE27683D5600A42054 /* SelectReminderTimePresenter.swift in Sources */,
 				BD9BF4A1276608420020CE8D /* TransactionPresenter.swift in Sources */,
 				BD9BF4D827674A2E0020CE8D /* MemberCell.swift in Sources */,
+				BDEE13942769DC9A0061ED19 /* IconModels.swift in Sources */,
 				BD9BF4BF27660C6C0020CE8D /* Extension + UIViewController.swift in Sources */,
+				BDEE13922769DC9A0061ED19 /* IconPresenter.swift in Sources */,
 				BD8AFE202768AE6E00131FE5 /* ItemCell.swift in Sources */,
 				BD9BF5252767D5A70020CE8D /* CreateBillRouter.swift in Sources */,
 				BD9BF46E276607090020CE8D /* SceneDelegate.swift in Sources */,
 				BD9BF497276608270020CE8D /* DashboardInteractor.swift in Sources */,
 				BD9BF4BA27660A070020CE8D /* Constants.swift in Sources */,
 				BD9BF5262767D5A70020CE8D /* CreateBillModels.swift in Sources */,
+				BDEE13932769DC9A0061ED19 /* IconRouter.swift in Sources */,
 				BD9BF5242767D5A70020CE8D /* CreateBillPresenter.swift in Sources */,
 				BD9BF5272767D5A70020CE8D /* CreateBillInteractor.swift in Sources */,
 			);
@@ -909,6 +1017,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoFi/CoFi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RMQNS23DVX;
@@ -923,7 +1032,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ADAIL.CoFi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoFi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -937,6 +1046,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = CoFi/CoFi.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RMQNS23DVX;
@@ -951,7 +1061,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.ADAIL.CoFi;
+				PRODUCT_BUNDLE_IDENTIFIER = com.CoFi;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

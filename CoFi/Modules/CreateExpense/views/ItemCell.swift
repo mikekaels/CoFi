@@ -12,7 +12,7 @@ class ItemCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollectio
         .configure { v in
             v.backgroundColor = .systemGray6
             v.layer.cornerRadius = 15
-            v.heightAnchor.constraint(equalToConstant: 100).isActive = true
+//            v.heightAnchor.constraint(equalToConstant: 100).isActive = true
             v.translatesAutoresizingMaskIntoConstraints = false
         }
     
@@ -72,7 +72,6 @@ class ItemCell: UITableViewCell, UICollectionViewDelegateFlowLayout, UICollectio
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print(indexPath)
         let cell = membersCollection.dequeueReusableCell(withReuseIdentifier: "memberCell", for: indexPath) as! MemberCell
         return cell
     }

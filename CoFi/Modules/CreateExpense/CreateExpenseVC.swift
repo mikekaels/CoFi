@@ -10,10 +10,9 @@ import UIKit
 class CreateExpenseVC: UIViewController {
     var presentor: CreateExpenseViewToPresenterProtocol?
     public var delegate: CreateExpenseDelegate!
-    var tableHeight: Double = 0.0
+    var tableHeight: CGFloat = 0
     
-    var items: [String] = ["","",""]
-//    - CGFloat(4 * self.items.count) * 2
+    var items: [String] = ["","","","","","","","","","","","","",""]
     let scrollView: UIScrollView = {
         let s = UIScrollView()
         s.translatesAutoresizingMaskIntoConstraints = false
@@ -145,17 +144,32 @@ class CreateExpenseVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Create", style: .plain, target: self, action: #selector(createTapped))
+        self.itemTableView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        self.itemTableView.reloadData()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize" {
+            if let newValue = change?[.newKey] {
+                let newSize = newValue as! CGSize
+                self.tableHeight = newSize.height
+                
+                DispatchQueue.main.async {
+                    let tableHeightConstraint = [ self.itemTableView.heightAnchor.constraint(equalToConstant: self.tableHeight)
+                    ]
+                    NSLayoutConstraint.activate(tableHeightConstraint)
+                }
+            }
+        }
     }
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        self.scrollView.layoutIfNeeded()
-        DispatchQueue.main.async {
-            self.itemTableView.heightAnchor.constraint(equalToConstant: (self.itemTableView.contentSize.height + 32) * 2.1 ).isActive = true
-            print("This: ", self.itemTableView.frame.height)
-            print("HEIGHT 1:",self.itemTableView.frame.height)
-            print("HEIGHT 2: ",self.itemTableView.contentSize.height)
-        }
+        
     }
     
     @objc func iconButtonTapped() {
@@ -182,11 +196,15 @@ extension CreateExpenseVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = itemTableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath) as! ItemCell
-        
+        cell.lItem.text = String(indexPath.row + 1)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
     
@@ -285,6 +303,7 @@ extension CreateExpenseVC {
         container.addArrangedSubview(itemTableView)
         itemTableView.leadingAnchor.constraint(equalTo: container.leadingAnchor).isActive = true
         itemTableView.trailingAnchor.constraint(equalTo: container.trailingAnchor).isActive = true
+//        itemTableView.heightAnchor.constraint(equalToConstant: tableHeight.constant).isActive = true
         container.addArrangedSubview(v4)
         
     }

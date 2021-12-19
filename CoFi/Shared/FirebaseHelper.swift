@@ -24,8 +24,8 @@ class FirebaseHelper {
                 completion(.success(.result(data)))
             
             case .success(.empty):
-                var ref: DocumentReference? = nil
-                ref = FirebaseHelper().db.collection("users").addDocument(data: [
+                var refs: DocumentReference? = nil
+                refs = FirebaseHelper().db.collection("users").addDocument(data: [
                     "first": first,
                     "second": second,
                     "email": email,
@@ -135,5 +135,9 @@ class FirebaseHelper {
                     
                 }
             }
+    }
+    
+    static func createGroup(completion: @escaping(Result<Group, Error>) -> ()) {
+        
     }
 }
